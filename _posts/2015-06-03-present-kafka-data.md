@@ -1,24 +1,43 @@
 ---
 layout: post
-title: "Survey: Kafka Data Sink for End User Presentation"
+title: "Discussion: Data Sink for Kafka" 
 description: ""
 category: 
-tags: [kafka]
+tags: [kafka, HBase, Cassandra]
 ---
+###Our problem###
+	Present kafka data to end user
 
-Twitter: Cassandra
+	Read heavy, need to support simple filtering and sorting,i.e., closer to OLTP than OLAP, because our streaming process will handle the complex query part.
 
-Netflix: Druid, ElasticSearch
+	Read may need to operate on 100m+ entries by 10k+ users. Latency < 1s
+	
 
-HBase: Tumblr, Mozilla, Cerner, DataSift....
+###How similar problem was solved ###
+	Cassandra: Twitter (Cassandra for "sub-second API query" and "real-time querying"), Datadog
 
-Hive: pinerest
+	ElasticSearch: Netflix, Loggy, Datadog
 
-Druid: Metamarkets
+	Druid: Netflix, Metamarkets
 
-Datadog: ElasticSearch, Cassandra
+	HBase: Tumblr, Mozilla, Cerner, DataSift....
 
-Loggy: ElasticSearch
+	Hive: pinerest
 
-###Conclusion###
-	Most popular choices, in order, are HBase, ElasticSearch, Cassandra, and Druid
+	Most popular choices, in order, are HBase, ElasticSearch, Cassandra, and Druid.
+	
+
+###HBase vs Cassandra###
+	Range reads: HBase
+	Random reads: Cassandra
+	Random writes: Cassandra
+	Hadoop integration: HBase
+	Setup and maintenance: Cassandra
+	Latency: HBase
+	Searching column Data: HBase
+	Dynamic query on columns: HBase
+	Access control: HBase
+	Aggregation/roll up/across-row analysis: Cassandra
+	
+	
+

@@ -3,7 +3,7 @@ layout: post
 title: "Understanding Samza metrics"
 description: ""
 category: 
-tags: [Samza, Kafka]
+tags: [samza, kafka]
 ---
 
 ### Common setup: ###

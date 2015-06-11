@@ -3,7 +3,7 @@ layout: post
 title: "Samza Job Patterns"
 description: ""
 category: 
-tags: [Samza]
+tags: [samza]
 ---
 Overall, remember that each samza container runs only in one thread. Therefore, performance is very sensitive to your logic
 

@@ -3,7 +3,7 @@ layout: post
 title: "Discussion: Data Sink for Kafka" 
 description: ""
 category: 
-tags: [kafka, HBase, Cassandra]
+tags: [kafka, hbase, cassandra]
 ---
 ###Our problem###
 	Present kafka data to end user

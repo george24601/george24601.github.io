@@ -3,7 +3,7 @@ layout: post
 title: "Samza task container: a quick overview"
 description: ""
 category: 
-tags: [Samza]
+tags: [samza]
 ---
 
 Each container is single-threaded. This means container will multiplex messages

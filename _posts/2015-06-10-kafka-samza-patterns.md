@@ -41,4 +41,6 @@ tags: [kafka, samza]
 	Option 1: generate vote object with unique id, store unique ids, and  map/reduce to count the final number
 
 	Option 2: generate vote object with unique id. Pipe them into HyperLogLog algorithm. A trade off between precision and space
-"
+
+###Batching for performance###
+	If you need to mini batch processes for performance gains, then it should not be a samza job,i.e., your program should just read from/write to kafka directly(although you may still need yarn for resource allocation and restart). Concretely, samza job is used only when both your input and output are kafka topics. Import into kafka/export into data sink may even be a batch process such as mapreduce

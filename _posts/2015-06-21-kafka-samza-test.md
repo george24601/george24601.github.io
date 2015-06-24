@@ -19,3 +19,9 @@ tags: [kafka, samza]
 	
 	Option 2: Populate the messages that defines the state as well when you are populating the topic in the test environment
 
+	Option 3: wrap local state creation in a protected test method, add a subtype in testing frame so you can provide mock implementation
+
+###Use of mock objects###
+	Mock object is valuable at discoverying the interaction between YOUR OWN componenets,i.e., directly contradicts the definition of integration testing, which requires us to cross the boundary
+
+	An alternative approach is to wrap external dependency with your own interface, so you can mock your own wrapper. In practice, such lightweight wrapper doesnt give enough benefit at the cost of additional types, and the wrapper itself becomes test liability,i.e., wrapper is useful only when it contains non-trivial concrete logic.

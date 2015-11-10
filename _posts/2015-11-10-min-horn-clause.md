@@ -1,26 +1,26 @@
 ---
 layout: post
 title: "Code Jam 2008 1A: Milkshakes"
-description: ""
+description: "Horn clause"
 category: 
 tags: [how-to-solve-it, google-code-jam]
 ---
-unknown: arrangement
+Unknown: arrangement
 
-known: clients preferences
+Known: clients preferences
 
 Conditions:
 
-    1. each client has at most 1 malted
-    2. arrangement has min # of malted
-    3. all customers must be satisfies, i.e., at least 1 in arrangement must match customer preference
+    1.Each client has at most 1 malted
+    2.Arrangement has min # of malted
+    3.All customers must be satisfies, i.e., at least 1 in arrangement must match customer preference
  
 Insights:
 
-    1. only 1 choice case: arrangement is forced
-    2. if many choices have same set of item preferences: all 0s will do
-    3. in terms of order of processing, we must solve all single cases, and propagate the changes and solve all single cases it generates
-    4. what remains is list of preferences with all free arrangements, each has at least 2 entries => all 0 would work, because we know at least 1 is 0!
+    1.Only 1 choice case: arrangement is forced
+    2.If many choices have same set of item preferences: all 0s will do
+    3.In terms of order of processing, we must solve all single cases, and propagate the changes and solve all single cases it generates
+    4.What remains is list of preferences with all free arrangements, each has at least 2 entries => all 0 would work, because we know at least 1 is 0!
 
 However, I run into serious problems implmenting pseudo code above. Namely, updating the list of user requirements and extract the remaining
 one

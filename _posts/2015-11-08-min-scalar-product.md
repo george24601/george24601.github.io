@@ -3,7 +3,7 @@ layout: post
 title: "Code Jam 2008 1A: Minimum Scalar Product"
 description: ""
 category: 
-tags: [how-to-solve-it, google-code-jam]
+tags: [google-code-jam]
 ---
 
 I discovered the insight from the 2 element, and to an extend, 3 element case. But how to prove it? Direct induction does not work well.

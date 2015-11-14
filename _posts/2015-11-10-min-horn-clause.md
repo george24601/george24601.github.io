@@ -3,7 +3,7 @@ layout: post
 title: "Code Jam 2008 1A: Milkshakes"
 description: "Horn clause"
 category: 
-tags: [how-to-solve-it, google-code-jam]
+tags: [google-code-jam]
 ---
 Unknown: arrangement
 

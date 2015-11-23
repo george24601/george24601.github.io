@@ -25,9 +25,8 @@ Insights:
 However, I run into serious problems implmenting pseudo code above. Namely, updating the list of user requirements and extract the remaining
 one
 
-------
-
 Official solution:
+------
 
     1.start with all 0s
     2.If all clients satified, done
@@ -42,3 +41,22 @@ This approach works because we turn only from 0 to 1, and not the other directio
 time iterate all customer once!
 
 Can use a bitset to make comparison easier, also, keep malted and unmalted in seperate collections.
+
+
+Reflections:
+------
+
+The basis of the algorithm is unit propagation. But because there is at most 1 true value. We dont have to keep track of # of active
+clauses => there is only 1 choice, unlike the general unit propagation case, where you need the count to help decide if it is the time to
+flip. 
+
+In either general or specialized case, we just need to know should we flip 0 to 1, and never from 1 to 0
+because it is flipped by previous propagation
+
+This unit propagation pattern is
+
+    1.start with identity answer
+    2.Similar to the spirit of greedy solution, move to the optimal solution one step at a time, with sure-fire step that improves the
+result
+    3. This sure-fire step becomes the inductive step
+    4. if there is no more step we can apply, we know we've reached the optimal solution

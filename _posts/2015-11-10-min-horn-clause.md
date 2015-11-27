@@ -60,3 +60,5 @@ This unit propagation pattern is
 result
     3. This sure-fire step becomes the inductive step
     4. if there is no more step we can apply, we know we've reached the optimal solution
+
+This pattern can be seen in a lot of optimization problems, e.g., Bellman-Ford, greedy algorithms, gradient descent..

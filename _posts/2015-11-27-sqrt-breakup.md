@@ -22,3 +22,6 @@ works are equiavlent in both cases. This solution can barely fit the run time
 Introducing the  interval tree
 ------
 
+
+-------
+This problem shares a lot of similarity with Josephus problem. The sqrt trick would work as well

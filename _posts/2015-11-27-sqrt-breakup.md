@@ -18,9 +18,14 @@ data structure which contains count-related info.
 We can use the classic sqrt break down, i.e., sqrt indices, each represents state of sqrt of rows. Both are sqrt to make sure worst case
 works are equiavlent in both cases. This solution can barely fit the run time
 
+A related idea is to use interval-tree like data structure to answer the query, i.e., instead of 1-level indexing, use multi-level indexing:
 
-Introducing the  interval tree
-------
+    Given current index i, what is the next index after skipping j unoccupied indices?
+
+Segment tree's idea is similar.  Note the true segment tree is used to answer range queries, and is not supposed to change after creation.
+
+
+
 
 
 -------

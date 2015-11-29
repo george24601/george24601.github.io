@@ -15,15 +15,13 @@ At each step in the string, we have 3 choices, concatenate, +, or -, note that w
 need to try them all!
 
 Gotchas
-```
-1. Note that we can not 2^64 is only 19 digits, so we can not convert the whole string directly into numbers. Fortunately num * 10 + digit
+
+  1. Note that we can not 2^64 is only 19 digits, so we can not convert the whole string directly into numbers. Fortunately num * 10 + digit
 preverses its mod under Group 210, because 210 is divided by 10. You can prove this by induction, adding digit by digit
 
 
-2. Alternatively, the state can be [start][end][mod] instead of [end][mod] to avoid trying all in loops
+  2. Alternatively, the state can be [start][end][mod] instead of [end][mod] to avoid trying all in loops
 
-
-```
 
 
 Starting state is ways[firstDigit] [0] = 1, ways[other memember in mod 210 groupd] [0] = 0;

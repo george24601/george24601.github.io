@@ -41,16 +41,13 @@ since we are wrapping up from left to right, all frequency will fall in the rang
 
 Pseudo code:
 
-```
-  sort the array and construct BST and segment tree, wiht node representing values in the array
+sort the array and construct BST and segment tree, wiht node representing values in the array
 
-  each node has attached node info set to 0
+each node has attached node info set to 0
 
-  for i = 1 to n
+for i = 1 to n
       get sum of frequncey with range < n[i]
       save result to answers, which represent # of increasing subsequence ending at it
       update tree to include the sum calculated. (if previous step gives 0, set it to 1 instead)
-
-```
 
  

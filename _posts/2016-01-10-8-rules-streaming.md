@@ -34,4 +34,4 @@ Tandem-style hot backup and real-time failover scheme=> HA
 Application should automatically and transparently load-balance over the avaialble machines
 
 highly-optimized, minimal-overhead execution engine that minimized ration of overhead to useful work, and limit "boundray crossing" by
-integarting all intoa single system process.
+integrating all intoa single system process.

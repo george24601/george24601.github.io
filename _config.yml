@@ -7,7 +7,7 @@
 
 # Site settings
 title: Algorithms and Software Engineering Notes
-email: george.li.24601@gmail.com
+email: georgexiaoxiaoli@acm.org
 description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://george24601.github.io" # the base hostname & protocol for your site

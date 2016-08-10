@@ -20,6 +20,10 @@ ways[i-1][j][k] + ways[i-1][j - 1] [k - a(i)] //i doesnt write a single + i writ
 
 Notice this recursion is really similar to how you calculate binomial coefficents
 
+Note that although O(n^3) run time is ok, but space is not ok. Therefore, we need to reuse the overwrite dp state trick, i.e., we use a 2-d
+array, and on calculating each ways, ways[i-1][j][k] is actually the cell we are about to update, and ways[i][j-1][k-a] is the (j-1, k-a)
+cell we updated in this i round, i.e., i should be the outmost loop
+
 
 
 703C: Chris and Road

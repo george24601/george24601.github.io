@@ -24,13 +24,11 @@ Proof: induction
 ```
   1. base case n = 1,2,3, obvious
 
-  2. when len % 3 = 0, we keep the last letter, and apply the inductive hypothesis on the len - 1 substring, and we add that letter back to
-the tail and will form a terminating string
+  2. when len % 3 = 0, we find the longest prefix where |x| = |y| = |z| - 1, apply the hypthesis, and then apply the hypothesis again on the suffix , with the last 2 letters of the reformed prefix
 
-  3. when len % 3 = 1, find the longest prefix s.t. |x| = |y| = |z|, apply the inductive hypothesis on the prefix and suffix, and then move
-up the head of the suffix to head if applicable
+  3. when len % 3 = 1. we look for a prefix wher |x| = |y| = |z|, apply the hypothesis on the suffix, and then the prefix plus the first letter of the reformed suffix
 
-  4. when len % 3 = 2, find the longest prefix s.t. |x|  + 1 = |y| + 1 = |z| or |x| +1 = |y| = |z| + 1, apply the hypothesis on both parts
+  4. when len % 3 = 2. similar to case 3)
 
 ```
 

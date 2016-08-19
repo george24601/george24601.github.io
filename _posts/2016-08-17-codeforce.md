@@ -48,7 +48,9 @@ side. Otherwise, the code can not handle the case of crossing the boundary of co
 
 621C: Wet Shark and Flowers
 ---------
-Two commmon tricks: reduce bands to prefixs, and caluclate complements 
+Two commmon tricks: reduce bands to prefixs, and caluclate complements.
+
+Note that if we have to calculate Pr(A) + Pr(B) - Pr(A) * Pr(B). Often it is a sign we might as well calculate its complement!
 
 ```
   1. Total E = sum of Ex for each shark

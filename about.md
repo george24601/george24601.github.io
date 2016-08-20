@@ -5,3 +5,5 @@ permalink: /about/
 ---
 
 My github: {% include icon-github.html username="george24601" %}
+
+[My LinkedIn] (https://ca.linkedin.com/in/george24601)

@@ -60,5 +60,3 @@ when k = 1, total |E| = |n|, with each edge has an outgoing edge , i.e., a cycle
 when n = 1 or 2, impossible. 
 
 when k is within the upper bound, we can just add edge the lexo sorted next k nodes
-
-

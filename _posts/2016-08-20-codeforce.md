@@ -48,7 +48,20 @@ sort by (w,h), then O(n^2) DP, finally scan through answers that can fit the env
 --------
 Note we have each dish exactly once. If k = 0, we can just brute force all sets, and calcuate final result
 
-Notice that the sat level is constant, given a set, we should just apply the rules as many as possible. In this case, we can jsut greedy - apply the rule as long as we can do, and the solution is maximal
+best(i, j, m)  = best possible score between [i,j], with total m selected
+
+Possible choices:
+
+```
+  1. ingore j : best(i, j-1, m)
+
+  2. keep j, with no rule applied : best(i, j-1, m-1) + c(j)
+
+  3. find k where j, k is a pair, with intermediate count,  and result is best(i, k -1, n) + best(k+1, j-1, m-n-2) + c + c(k) + c(j)
+
+  5. overall cost 18^5, final answer is best(1, n, m)
+```
+
 
 
 417C: Football

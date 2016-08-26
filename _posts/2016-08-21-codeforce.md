@@ -8,7 +8,10 @@ tags: []
 
 246D: Colorful Graph
 ---------
+
 For each edge, consider C(u) and C(v), we just update Q(c(u)) and Q(c(v)), and in the end select the set with max cardinality
+
+similarly, it is as if we create a graph based on colors, and add edge between colors
 
 
 459C: Pashmak and Buses
@@ -45,25 +48,14 @@ The basic idea is sound, however, the main problem is that factoring in step 2) 
 factoring process, and calculate answers for all numbers in a single runr, i.e., instead of increasing match[factor] by 1, we can increase
 it by f(p)
 
-
-
 429B: Working out
 -------------
-Consider the cell they meet at (mi, mj), note that only 1 side can use the cells from (mi, 1) to (mi, mj -1) 
+Consider the cell they meet at (mi, mj), one has to enter horizontally, and the other has to enter vertically, otherwise, they will have
+more than 1 same cells, we just need to iterate all possible meeting points, each with 2 possiblites
 
-Therefore, max score to reach (mi, mj) from start = max of 
-```
-  1. mA(mi, mj) + mB(mi, mj+1) - c(mi, mj) o
+also, note that the path is effective cut in 2, and each half must exist, i.e., meeting point can not touch border!
 
-  2. mA(mi, mj -1) + mB(mi, mj) - c(mi, mj) 0
-
-```
-
-Similarly,when moving from the meeting cell to the respective targets, still only 1 can use the column from (mi, mj+1) to (mi, m), i.e., one
-of move has to move horizontally, the score
-is max of ( A move horiotzally, B move horizontally)
-
-so 4 * 10^6 to calculate the cost in 4 directions + 10^6 brute force on meeting points
+so 2 * 10^6 to calculate the cost in 4 directions + 10^6 brute force on meeting points
 
 
 311A: The Closest Pair

@@ -32,7 +32,7 @@ Greedy works on O(nm), but need additonal DS to speed it up
 
 407B: Long Path
 --------
-Claim: when we arrive at i + 1, all previous i has been visited even times already
+Claim: when we arrive at i + 1, all j < i has been visited even times already
 
 Proof: By induction, 
 
@@ -42,14 +42,15 @@ Proof: By induction,
   2. if i points to itself, it will loop until it reaches even time, then move onto i+1
 
   3. if move to previous entry, then following sequence of action is same as p visited for the first time. By the difference of the
-induction on case p and case i, we know the number of ops introduced by the subseqenct actions at each cell is even
+induction on case p and case i, we know the number of ops introduced by the subseqenct actions at each cell is even. Now we have visited i
+even time, and move onto i+1
 ```
 
 Therefore, when we later on move back to previous entries, the # of actions is same as we visit it for the first time, because even times case = 0 times case
 
 visit(i,j) : number of steps to visit j, from i for the first time, with all cells visted even times already, with the exception of i 
 
-visit(i, j) = visit(i, j -1) + visit(p(j-1), j -1)  + 1 //1 for moving from j-1 to p(j-1)
+visit(i, j) = visit(i, j -1) + visit(p(j-1), j -1)  + 2 //1 for moving from j-1 to p(j-1), one for moving from  j - 1 to j
 
 base case visit(i, i) = 0
 

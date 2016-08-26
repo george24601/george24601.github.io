@@ -18,6 +18,8 @@ If we can form a higher level of tower, we can form a lower level of tower, i.e,
 Given a tower of level h, we can know the min # of cards we need to build it. Therefore, we can just bsearch for the answer: find the
 highest h s.t., f(h) <= n
 
+f(h) = (1 + h) * h /2 * 3 - h
+
 
 185A: Plant
 --------
@@ -46,21 +48,14 @@ sort by (w,h), then O(n^2) DP, finally scan through answers that can fit the env
 
 580D: Kefa and Dishes
 --------
-Note we have each dish exactly once. If k = 0, we can just brute force all sets, and calcuate final result
+At first I tried brute force generate all set, and potentially find all optimal matching in the set, but I can not find an easy algorithm
+to do so.
 
-best(i, j, m)  = best possible score between [i,j], with total m selected
+However, considering that a lot of graph-ish problem are very dp-like, we can locate the following relationship
 
-Possible choices:
+score(set ending at i) = min(set ending at j, and i not in set) + score(i followed by j) 
 
-```
-  1. ingore j : best(i, j-1, m)
-
-  2. keep j, with no rule applied : best(i, j-1, m-1) + c(j)
-
-  3. find k where j, k is a pair, with intermediate count,  and result is best(i, k -1, n) + best(k+1, j-1, m-n-2) + c + c(k) + c(j)
-
-  5. overall cost 18^5, final answer is best(1, n, m)
-```
+2^n * n states, each state takes n to update
 
 
 

@@ -50,13 +50,25 @@ e.g., biggest number can appear n + 1 times, the follwoing 3 numbers appear n ti
 
 337C: Quiz
 ---------
-when n - m >=  ceil(m/k), we know we can arrange k in the ceil(m/k) bands, none of which triggers the double rule 
+ideally, if we do not trigger the k rule, the final score will be m. We need to limit the times the k rule is trigger as much as possible
 
-when k = 2, 12 34 gives score 4 + 4
+of course, we want to trigger all double rules asap, i.e., at the beginning, otherwise, later correct answers will contribute to base
 
-1 234 gvies score 1 + 10, i.e., we need to reduce number of longest consecutives. Moreover, the longest band and shortest band size diff can
-no more than 1, otherwise, we can take 1 from the longest and give it to the shortest, and still imporve the solution, and we have lower
-bound for S
+so the final solution would look like
+a continous band + bands of size k + a remainder band
 
-(m/S) + m <= n => S >= m / (n - m)
+L + (k - 1) * i + LR = m 
 
+L + k*i + LR = n
+
+L + k * (n - m) + LR = n
+
+we can bsearch on the length of the contnous band length, find the smallest that works 
+
+for the contnious band, the f(L) (assume L % K == 0) = (f(L-k) + k) * 2
+
+f(L) + 2k = 2 (f(L-k) + 2k)
+
+f(L) + 2k = 4 (f(L-2k) + 2k)....
+
+So we can do fast exponatation here

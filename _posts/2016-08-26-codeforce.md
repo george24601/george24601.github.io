@@ -31,17 +31,6 @@ pr(n board by t) = p * pr(n-1 boarby by t -1) + (1-p) * pr(n boarby by t - 1)
 
 
 
-159D: Palindrome pairs
--------
-consider if we have a palindrome, then answer is 
-
-num(i, j) = 0 if a[i] != a[j]
-
-1 + num(i+1, j-1) if a[i] = a[j]
-
-then finally brute force on all (i, j) combos
-
-
 313C: Ilya and Matrix
 ---------
 each entry appears at least once, therefore, we should force higher numbers to appear more
@@ -65,10 +54,21 @@ L + k * (n - m) + LR = n
 
 we can bsearch on the length of the contnous band length, find the smallest that works 
 
-for the contnious band, the f(L) (assume L % K == 0) = (f(L-k) + k) * 2
-
-f(L) + 2k = 2 (f(L-k) + 2k)
-
-f(L) + 2k = 4 (f(L-2k) + 2k)....
+for the contnious band, the 
 
 So we can do fast exponatation here
+
+f(n) = 2^(n-1) * f(1), where f(1) = 2* k + 2 * k
+
+Mistakes I made during implementation
+--------
+````
+  1. During fast expontation, the resursive call should appear only once
+
+  2. During mod operations, need to defend against negative logs 
+
+  3. This means for those easy-to-generate cases, I should run the max case myself just to ensure the sanity
+
+  4. In bsearch, need to delete if mid == low, if we want to be greedy to push it down further, because low <= mid < high 
+```
+

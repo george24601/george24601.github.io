@@ -12,21 +12,16 @@ Speical case: assume the removal is in the order of n...1
 
 this is basically the reverse of floyd washall
 
+Note that
+
 ```
-LPE(intermediate, 2, n)
+  1. a brute force O(n^3) space will exceed memory limit. Therefore, we need to reuse the previous state. Note that this does not affect the
+correctness, because len[from][inter][inter-1] = len[from][inter][inter] 
 
-  LPE(from,  1, intermediate)
+  2. Even if we care only the partial graph, we still need to build all nodes as we expand the inters, so that when the new inter node is
+introduced, we can immediately connect with existing nodes. Also, because we only calc path passing inter nodes, we know we are not
+calculating other SPs by accident
 
-    LPE(to, 1, intermediate)
-
-      best[from][to][intermediate] = min of(best[from][to][intermediate -1], e[from][to],
-best[from][inter][inter - 1] + best[inter][to][inter-1])
-
-      sumup delta in this round
-
-
-  update to total sum here, add it to the output
-  
 ```
 
 

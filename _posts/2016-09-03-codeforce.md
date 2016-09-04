@@ -52,8 +52,11 @@ Flood fill problem: DFS for each component, keep track of the cell belongs to wh
 Upon seeing query, just retrieve pre-computed result
 
 
-321A: Ciel and Robot
+321A: Ciel and Robot (!!!)
 --------
+
+Idea 1
+-------
 consider the 1d case, and only 1 dimensional: then either it reaches that in the first run, or never if the overall delta is in the opposite
 direciton
 
@@ -61,6 +64,11 @@ If we can reach within 1 iteration => manhattan distance <= |s|
 
 therefore, we try to move it so that its manhatann distance can be within |s|, after that we need to try 2|s| times traversing so that we
 can make sure all within bound spots are checked
+
+Idea 2
+-------
+To reach the path, the final form is (k * dx[s] + dx[p], k * dy[s] + dy[p]), we can iterate through all possible Ps, and then reverse
+calculate if k exisits
 
 
 592C: The Big Race
@@ -74,7 +82,5 @@ total = (t - 1)/lcm(w,b) * min(w,b) + min((t -1) % lcm(w,b), min(w, b))
 
 353C: Find Maximum
 --------
-just calculate f((prefix - 1) << i + 1s), iterate through all is
 
-
-
+just calculate f((prefix - 1) << i + 1s), iterate through all is, or max(v) = f(2^n -1) + max(v - 2^n)

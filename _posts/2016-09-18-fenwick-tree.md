@@ -24,3 +24,21 @@ left, starting at 0, i.e., each index covers a seg of length 2^r
 6. To calculate the 2^(right most bit pos), i.e., the shortest bit suffix that starts with a 1 bit,  we can use num & -num!
 
 7. To initialize the tree, we just mark all 0, and then use the write operations to set each index to the input value
+
+
+459D: Pashmak and Parmida problem
+------
+
+iterate through array once, compute frequency for each entry, and populate the FT for frequencency
+
+iterate the array again, from right to left
+
+```
+	1. find the current accumulated frequncy for current entry 
+
+	2. update FT, with FT(frequency)-- and FT(frequency-1) ++
+
+	3. use FT to answer prefixsum(frequency), add the result to the final answer
+
+	4. update current frequency++
+```

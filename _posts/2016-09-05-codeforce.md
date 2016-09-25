@@ -37,9 +37,3 @@ At row i > n/2 + 1, E *(n -i), then 2 * i - n, O and then E * (n - i again)
 We can prove by induction this arrangement is correct
 
 
-459D: Pashmak and Parmida problem
-------
-
-Idea 1: Fenwick tree for fast prefix-sum calculatin
-
-Idea 2: Divide and conquer

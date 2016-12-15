@@ -63,7 +63,7 @@ So the algorithm is
 
 ```
 
-297B: Fish Weight
+297B: Fish Weight(!!!)
 --------
 
 Idea 1
@@ -107,12 +107,3 @@ Claim:  A is winning in at least one postition <=> it is possible to find a solu
   2. (=>) we can make the delta arbitarily large to cover all potential balances
 
 ```
-
-
-
-
-
-
-
-
- 

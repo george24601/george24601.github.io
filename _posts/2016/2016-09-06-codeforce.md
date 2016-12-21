@@ -53,12 +53,9 @@ Then check all divisors of a up to sqrt(a), add count(div1) * count(div2) to the
 the final answer needs to * 2, except when a has a perfect square
 
 
-689C: Mike and Chocolate Thieves
+689C: Mike and Chocolate Thieves(!!!)
 ----------
-Make sure that m % 4! = 0, because all 4 have different values, and thieves can go in different order.
+a * k^3 <= n, assume k = 2, 3, 4..., and we know m =  n/8 + n/27 + .... + 1, Note that m > n/8, therefore, n < m * 8
 
-a0 * k^3 <= n,   
-
-We bsearch on n, for each possible nv, we interate all k from 2 t0 10^5, and add n/k^3 to count. N is good if count >= m;
-
+I had difficulties proving n's upperbound. Also notice we are looking for minimal viable answer here, so need to do extra check at bsearch's midpoint
 

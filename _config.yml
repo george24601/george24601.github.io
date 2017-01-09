@@ -7,7 +7,7 @@
 
 # Site settings
 title: Algorithms and Software Engineering Notes
-email: georgexiaoxiaoli@acm.org
+email: 
 description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://george24601.github.io" # the base hostname & protocol for your site
@@ -19,6 +19,6 @@ markdown: kramdown
 gems:
   - jekyll-paginate
 
-paginate: 10
+paginate: 5
 
 paginate_path: "/blog/page:num/"

@@ -3,7 +3,7 @@ layout: post
 title: "Reflections on Reflection"
 description: ""
 category: 
-tags: [codeforces]
+tags: []
 ---
 Reflection is commonly used with annotation
 ```

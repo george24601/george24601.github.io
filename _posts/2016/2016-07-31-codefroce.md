@@ -6,51 +6,33 @@ category:
 tags: []
 ---
 
-384C: Milking cows
+384C: Milking cows (!!!)
 ---------
+This is type of the problem where we decompose by classification, and hopefully the target function is a simple composition of each class,
+without each class overlapping of each other's cases
+question is: how do we classify?
 
-suppose we have the optimital solution, what should it look like?
+We can just focus on the cases of 2 cows, 4 cases
+```
+1. >< : we will lose 1 regarldess of which side we pick
 
-consider we have 2 cows at i and j with i < j 
+2. >> : we should try pick the left most one first
+
+3. <>: we will not lose any regardless of which side we pick
+
+4. <<: we should try picking the right most one first
 
 ```
 
-  1. if a[i] = 0 and a[j] = 0, in an optimal solution, j is milked before i, and no milk is lost
+since case 1 and 3 gives constant cost, if we can just need to minimize case 2 and 4 AT THE SAME TIME, we can reach the minimal cost
 
-  2. if a[i] = 0 and a[j] = 1, order does not matter in an optimal solution, and no milk is lost
+Fortunatly, we can decompose the target string into >>>>> and <<<<< : even the two interleaves, how they interleave doesn't affect the final
+target functions 
 
-  3. if a[i] = 1 and a[j] = 0, order does not matter, we will always waste 1 unit of milk
-
-  4. if a[i] = 1 and a[j] = 1, in an opitmal solution, j is milked after i, and no milk is lost
-
-```
-
-Use the standard horizontal-vertical perspective switch. Instead of what happens during milking a single cow, consider i in the whole
-milking process: each (i, j) combination will be evaluated at least once, therefore, the optimal cost >= number of pairs
-of (a[i] = 1 and a[j] = 0), where i < j.
-
-The question becomes, can the lower bound be really reached?  
-
-```
-
-  For this lower bound to be reached, this means all observeration must be respected!
-
-  all i where a[i] = 0 must be orderderd according to 1)
-
-  all i where a[i] = 1 must be ordered according to 4)
-
-  each group forms a partial order. Note that the two parital orders can interleave due to 2) and 3)
-
-  to construct a solution, we can look for speical case where the two parital orders do not interleave   
- 
-```
-  
-In the end, we need to calculate pairs with condition 3), we can do that with a linear scan
+So we just need to calculate the total cost of case 1 => do a linear scan with state update and we are good
 
 
-
-
-89 D:  Caesars Legions
+118D:  Caesars Legions
 ---------
 Consider the compliement of the problem:  how many ways to have no more than k1 consecutive Fs or K2 consecutive Cs?
 

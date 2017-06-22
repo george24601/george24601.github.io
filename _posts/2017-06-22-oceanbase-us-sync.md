@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "How Oceanbase implements tablet location resolution"
+title: "How Oceanbase synchronize states between updateServers "
 description: ""
 category: 
-tags: [archtecture]
+tags: [archtecture, oceanbase]
 ---
 
 Reference

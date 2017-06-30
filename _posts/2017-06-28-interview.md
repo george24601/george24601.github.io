@@ -83,6 +83,7 @@ Idea
 -------
 since it O(n) and const memory space, most likely comparion or set based solution won't work. We will have to use a radix-sort like approach
 
+
 Code
 ----------
 
@@ -92,14 +93,14 @@ public vector<int> findRepeat(vector<int> nums){
 	LP(i, 0,nums.size()){
 
 		while(nums[i] != i){
-			int curN = nums[i];
+			int curNum = nums[i];
 			int toSwap = nums[curNum];
 			
 			if(curNum == toSwap){
 				ans.push_back(curNum)
 				break;
 			}else{
-				swap(i, curN);
+				swap(i, curNum);
 			}
 
 		}
@@ -108,3 +109,5 @@ public vector<int> findRepeat(vector<int> nums){
 	return ans;
 }
 ```
+
+It is on because each index got swapped in at most once, i.e., the whole swap happens at most n times

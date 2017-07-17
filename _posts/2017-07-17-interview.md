@@ -46,7 +46,12 @@ Simliar to the problem above. Try all O(n^2) combinations, put it ina map<int, P
 ```
 1. we will terminate early
 
-2. For all feasible combinations, we just look for the one with lexigraphically minimal (A, B). Our solution will not miss, because given anothing solution, if they involves indices with same value of A or B, we can swap them with the first A or B we met => which is discovered in our loop
+2. For all feasible combinations, we just look for the one with lexigraphically minimal (A, B). Our solution will not miss, because if there exists solution with A + B = S, then 
+we know there must exist solution with lexigraphically minimal (A, B) as a solution, s.t., A+ B = S. 
+
+3.Because if there is multiple values of A and B in the array, we can just swap indexes to move the index of A and B forward.
+
+4. Otherwise, we know there are multiple non-intersecting pairs that satisfies A + B = S.  We can obviously pick the first S sum pair we meet
 ```  
 
 
@@ -82,5 +87,3 @@ void dfs(v, from){
 	removeDir(v, from)
 }
 ```
-
-

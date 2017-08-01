@@ -13,6 +13,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://george24601.github.io" # the base hostname & protocol for your site
 github_username:  george24601
 
+footer-links:
+  github: george24601
+  linkedin: george24601
+
 # Build settings
 markdown: kramdown
 

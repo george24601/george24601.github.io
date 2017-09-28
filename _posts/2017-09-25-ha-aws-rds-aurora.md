@@ -3,13 +3,13 @@ layout: post
 title: "On HA of AWS Mysql RDS and Aurora"
 description: ""
 category: 
-tags: [database, architecture]
+tags: [database, architecture, aurora]
 ---
 MySQL RDS
 -------
 In multi-AZ deployments for MySQL, data in primary DB is synchrously replicated to a standby instance in a different AZ. Failover is automatic, and endpoint remains same. Backup is taken from the standby, so that I/O is not suspendend on primary
 
-Note the read replica uses MySQL's async replication
+Note the read replica, a different concept from the multi-az replica, uses MySQL's async replication
 
 
 Aurora RDS
@@ -24,4 +24,34 @@ Each write has to be acknolwedged by 4 out of 6 copies (sync), while read covers
 
 For each source DB cluster, you can only have one cross-region Read Replica DB cluster. Data transfer between Regions incurs extra charge. 
 
-For DR Drills, search for "Testing Amazon Aurora Using Fault Injection Queries"
+It is possible to promote the cross-region to standalone cluster, but this also means we need to add a cross-region replica to this newly promoted master - the old master will be on a split brain, and can not be re-incorporated!
+
+Also note that for EACH region, aurora gives 2 end points, one read point, and one write end point. It is not smart enough to do auto-load balance!
+
+
+ALTER SYSTEM CRASH
+----------
+You can use fault injection query to force a crash of an Aurora instance (write or read replica), but a failover will not occur in this case. 3 crash types
+
+```
+1. instance: database
+2. dispatcher: it dispatches from master to the cluster
+3. node: 1+2 , also delete cache
+```
+
+ALTER SYSTEM SIMULATE percentage_of_failure PERCENT READ REPLICA FAILURE
+----------
+Options
+```
+1. percentage_of_failure: % of requests blocks during failure
+
+2. Failure type: all or a single replica failure
+
+3. quantity: amount of time to simulate failure. Don't set it for too long, or the cluster might assume it crashed already, and creates a new replica already
+```
+
+ALTER SYSTEM SIMULATE percentage_of_failure PERCENT DISK FAILURE
+---------
+
+ALTER SYSTEM SIMULATE percentage_of_failure PERCENT DISK CONGESTION
+--------

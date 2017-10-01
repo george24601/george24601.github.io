@@ -27,31 +27,3 @@ For each source DB cluster, you can only have one cross-region Read Replica DB c
 It is possible to promote the cross-region to standalone cluster, but this also means we need to add a cross-region replica to this newly promoted master - the old master will be on a split brain, and can not be re-incorporated!
 
 Also note that for EACH region, aurora gives 2 end points, one read point, and one write end point. It is not smart enough to do auto-load balance!
-
-
-ALTER SYSTEM CRASH
-----------
-You can use fault injection query to force a crash of an Aurora instance (write or read replica), but a failover will not occur in this case. 3 crash types
-
-```
-1. instance: database
-2. dispatcher: it dispatches from master to the cluster
-3. node: 1+2 , also delete cache
-```
-
-ALTER SYSTEM SIMULATE percentage_of_failure PERCENT READ REPLICA FAILURE
-----------
-Options
-```
-1. percentage_of_failure: % of requests blocks during failure
-
-2. Failure type: all or a single replica failure
-
-3. quantity: amount of time to simulate failure. Don't set it for too long, or the cluster might assume it crashed already, and creates a new replica already
-```
-
-ALTER SYSTEM SIMULATE percentage_of_failure PERCENT DISK FAILURE
----------
-
-ALTER SYSTEM SIMULATE percentage_of_failure PERCENT DISK CONGESTION
---------

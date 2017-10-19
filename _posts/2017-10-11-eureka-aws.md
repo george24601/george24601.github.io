@@ -27,7 +27,7 @@ Eureka Server - Bootstrap
 ---------
 1. awsBinder - during serverContext init, we check if applicationInfoManager.getInfo() is from aws
 
-```
+```java
 	protected boolean isAws(InstanceInfo selfInstanceInfo) {
 		boolean result = DataCenterInfo.Name.Amazon == selfInstanceInfo
 				.getDataCenterInfo().getName();
@@ -47,7 +47,7 @@ Eureka Server - Server Config
 Eureka Server - Controller
 -------
 1. In header
-```
+```java
 	if (info.getName() == DataCenterInfo.Name.Amazon) {
 			AmazonInfo amazonInfo = (AmazonInfo) info;
 			model.put("amazonInfo", amazonInfo);

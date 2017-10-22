@@ -44,3 +44,4 @@ Problems I run into when I pack Eureka inside docker
 1. Use java -jar eureka.jar does not trigger injection at @Bean. Still don't understand why, mostly likely because of missing jar in classpath
 2. Then I tried running gradle wrapper directly inside container, but the minimal java docker image does not have bash, which gradle wrapper requires
 3. So I changed to base image to centos 7, but JAVA_HOME is not set, so I have to add CMD to install java and set JAVA_HOME explicitly
+4. Need to set ip and host name explicitly, during server bootstrap. Otherwise, the host will use the internal ip host name instead of public ip host name. Such discrepancy will cause Eureka to report replicas as unavailable, because the registered host name is different from the EIP host name stored in route 53 

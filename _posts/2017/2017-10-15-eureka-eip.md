@@ -28,4 +28,5 @@ String aWSAccessId = serverConfig.getAWSAccessId();
 String aWSSecretKey = serverConfig.getAWSSecretKey();
 ```
 in service config
+7. Note that EIP is a public IPv4 address, but we really want to shield eureka from internet traffic. Instead, we can put eureka instances inside the private subnet, while still using the public host name. The communication from within the VPC should still work, because AWS resolves public DNS host name to the private IPv4 address
 

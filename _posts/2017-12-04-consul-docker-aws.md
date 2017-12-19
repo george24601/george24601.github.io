@@ -21,9 +21,8 @@ Problems to watch out for
 [CloudFormation Template](https://github.com/awslabs/service-discovery-ecs-consul/blob/master/service-discovery-blog-template)
 
 Consul server starts
-------
 
-```
+```bash
 docker run -d --restart=always -p 8300:8300 -p 8301:8301 -p 8301:8301/udp"
                                             "-p 8302:8302 -p 8302:8302/udp -p 8400:8400 -p 8500:8500 -p 53:53/udp",
                                             "-v /opt/consul:/data"
@@ -34,7 +33,9 @@ docker run -d --restart=always -p 8300:8300 -p 8301:8301 -p 8301:8301/udp"
                                             "-ui-dir /ui"
 
 ```
-```
+
+Consul agent starts
+```bash
 "docker run -d --restart=always -p 8301:8301 -p 8301:8301/udp",
                                             "-p 8400:8400 -p 8500:8500 -p 53:53/udp",
                                             "-v /opt/consul:/data -v /var/run/docker.sock:/var/run/docker.sock",
@@ -44,6 +45,7 @@ docker run -d --restart=always -p 8300:8300 -p 8301:8301 -p 8301:8301/udp"
                                             "-advertise $(curl -s http://169.254.169.254/latest/meta-data/local-ipv4) -dc" INJECT_HERE
                                             "-config-file /etc/consul/consul.json"
 ```
+
 Note
 -------
 
@@ -55,10 +57,12 @@ Note
 
 4. /etc/consul/consul.json. leave_on_terminate: true
 
-5. Although /etc/ecs/ecs.config is define, Consul does not run as a ECS task or service.
+5. Although /etc/ecs/ecs.config is defined, Consul does not run as a ECS task or service.
 
 6. 169.254.169.254 is a reserved endpoint to query current instance's metadata
 
 7. It also has a glidelab/registrator component
 
 8. --net
+
+9. progrium/consul is not the official consul docker image, which is hashicorp/docker-consul

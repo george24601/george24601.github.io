@@ -6,14 +6,14 @@ category:
 tags: [middleware]
 ---
 
-Setting up consul server
+Setting up consul
 -----------
 
 1. For the deployment, we use an autoscaling group of fixed size, i.e., min size = max size = 3 or 5, and set -bootstrap-expectto the cluster size 
 
-2. Use ```-retry-join "provider=aws tag_key=consul-ecs tag_value=$TAG_VALUE"``` to mark the consul EC2 instances. Other flags don't seem to work in my experiments 
+2. Use ```-retry-join "provider=aws tag_key=$TAG_KEY-ecs tag_value=$TAG_VALUE"``` to mark the consul EC2 instances. Other flags don't seem to work in my experiments 
 
-3. Need ```-client 0.0.0.0``` so that the consul inside docker can receive traffic from outside the docker
+3. Need ```-client 0.0.0.0``` so that the consul inside docker can receive traffic from outside the docker,i.e., consul will listen to all network interfaces
 
 4. The image we use is based on the offical consul image, but we have to modify docker-entrypoint.sh to include EC2 API call. So that we can fix the node id to the EC2 instance ID, and address to the EC2 private IP. I also tried invoking the curl call from terraform or supply the command from docker command, but my efforts are not successful
 
@@ -41,4 +41,7 @@ Setting up consul agent
 
 4. The registrator automatically discovers the service name by its BASE docker image name. This means all our deployments should use a single ECR with different tags
 
-3. Registrator should 
+5. However, most likely you don't need the registrator, because most consul client package will include the registration
+
+6. Consul client agent container should run in the host mode, so does all its client programs, i.e., we should manage ports to avoid conflicts here. Note if the network is host mode we don't need to set ```-client```
+

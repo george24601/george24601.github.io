@@ -20,7 +20,9 @@ Drill 1: single node failure
 
 2. Verify that the new instance joins the existing cluster and reaches a stable state
 
-3. Restart the stopped instance at 1), force remove it after it joins the new stable cluster. Otherwise, force remove it. 
+3. Verify that the new consul instance is at the correct version (to test the rolling upgrade case)
+
+4. Restart the stopped instance at 1), force remove it after it joins the new stable cluster. Otherwise, force remove it. 
 
 
 Drill 2: loss of quorum and complete outage

@@ -9,9 +9,12 @@ tags: [middleware]
 Setting up consul
 -----------
 
-1. For the deployment, we use an autoscaling group of fixed size, i.e., min size = max size = 3 or 5, and set -bootstrap-expectto the cluster size 
+1. For the deployment, we use an autoscaling group (ASG) of fixed size, i.e., min size = max size = 3 or 5, and set -bootstrap-expectto the cluster size. Desired size for ECS and ASG are equal to the min size 
 
-2. Use ```-retry-join "provider=aws tag_key=$TAG_KEY-ecs tag_value=$TAG_VALUE"``` to mark the consul EC2 instances. Other flags don't seem to work in my experiments 
+2. Use ```-retry-join "provider=aws tag_key=$TAG_KEY-ecs tag_value=$TAG_VALUE"``` to mark the consul EC2 instances. 
+Other flags don't seem to work in my experiments.
+
+However, this  retry-join by tag actually gave me a lot of trouble in DR drills, namely the handle the case where majority of instances are replaced by autoscaling group. In the end I took it out and manually join the cluster. Consul is smart enough to rejoin previously know cluster 
 
 3. Need ```-client 0.0.0.0``` so that the consul inside docker can receive traffic from outside the docker,i.e., consul will listen to all network interfaces
 
@@ -30,7 +33,8 @@ set -- "$@" agent -server -ui \
 	-advertise $(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
 ```
 
-Setting up consul agent
+
+Setting up consul client
 ---------
 
 1. EACH instance in your service cluster needs consul agent and registrator running. This can be done by using ECS api call in user data AND adding that to systemd, or just force ECS task capacity same as cluster size.
@@ -45,3 +49,4 @@ Setting up consul agent
 
 6. Consul client agent container should run in the host mode, so does all its client programs, i.e., we should manage ports to avoid conflicts here. Note if the network is host mode we don't need to set ```-client```
 
+7. Unlike server agent, client agent can and should rejoin by tag, since its stateless 

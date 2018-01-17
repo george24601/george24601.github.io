@@ -36,14 +36,13 @@ Drill 3: loss of quorum - complete outage
 -----------
 1. Stop all but one server. ASG will kick in and spawn new instances, but the cluster is at a corrupted state, so any rejoin will fail.
 
-2. Change the desired size of both ASG and Task definition settings to 1 
-
 3. Stop all newly spawned instanced expect the original alive one
+
+??4. Change the -bootstrap-expect, note for the init bootstrap you need -boottrap-expect flag for sure
+-need to take out ASG desired capacity
 
 4. go to the -data-dir of each server, inside ratf/ dir add a raft/peers.json file. Find the server id in node-id file of data directory. This file should include ONLY the alive node
 
 5. reboot the only alive server now. Make sure the log shows that peers.json is read correctly
 
-6. Change the desired size of both ASG and Task definition to the cluster size
-
-7. ECS and ASG should kick in and spawn new instances
+7. Go into the new instances, and manually join the node to the cluster

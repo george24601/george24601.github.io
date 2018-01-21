@@ -50,3 +50,5 @@ Setting up consul client
 6. Consul client agent container should run in the host mode, so does all its client programs, i.e., we should manage ports to avoid conflicts here. Note if the network is host mode we don't need to set ```-client```
 
 7. Unlike server agent, client agent can and should rejoin by tag, since its stateless 
+
+6. For spring cloud consul, MAKE SURE you set spring.cloud.consul.discovery.queryPassing = true. Otherwise, spring's consul library will grab unhealthy instance as well. This caught us off guard during our DR drills.

@@ -51,4 +51,11 @@ Setting up consul client
 
 7. Unlike server agent, client agent can and should rejoin by tag, since its stateless 
 
-6. For spring cloud consul, MAKE SURE you set spring.cloud.consul.discovery.queryPassing = true. Otherwise, spring's consul library will grab unhealthy instance as well. This caught us off guard during our DR drills.
+Gotchas
+---------------
+
+1. For spring cloud consul, MAKE SURE you set spring.cloud.consul.discovery.queryPassing = true. Otherwise, spring's consul library will grab unhealthy instance as well. This caught us off guard during our DR drills.
+
+2. To deregister a service instance, use the agent API instead of catalog API on the same host the service instance is running. The service ID is the "ServiceID" field returned by the GET request
+
+3. ECS has no auto restart API. So as part of deployment, we need to register a new service definition and then update the service, as shown by many other people. However, pay attention to the minium health threasold you set. If it is too high (> 0 if you have only 1 instance), the auto restart upon service update will not kick in, because otherwise, the # of health services will drop below your min thresold

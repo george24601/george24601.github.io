@@ -6,13 +6,47 @@ category:
 tags: [architecture, security]
 ---
 
+JWT
+----------
+Three parts: header, payload and signature.This means microservices need to know the public key to verify the signature.
+
+Normally sent with the authorization header as the bearer token,i.e., use the bearer schema
+
+API gateway will forward the request with JWT to the service, which will in turn will decide if it will grant the resource or not. 
+
+We may choose to let user use a reference token, and API gateway will translate the reference token to the jwt token. Note the reference token can come from an OAuth server. This also suggests that JWT stays within the private network, and only reference token is on user's browser session
+
 Note that Spring Cloud Security is exclusively for OAuth2 scenarios. Treat it as a complete different thing from Spring Security! Also, Spring Security has a very specific, pre-defined authentication flow, from where you can find names of many auto-wired/injected classes
 
-Dependency:
+Common Choices
+---------
+
+1. Spring cloud security
+
+2. keycloak by JBoss
+
+3. OpenID-Connect-Java-Spring-Server
+
+4. Apereo CAS
+
+Workflow
+----------
+1. Client logs in to acquire access token
+
+2. Client sends access token to the API gateway
+
+3. Gateway uses auth server to validate token and convert to JWT
+
+4. Gateway sends jwt token along with requests to backend microservices
+
+5. Every microservice has JWT client to decrypt user context inside the jwt
+
+Dependency
+-----------
+
+1. spring-security-web
 	
-	a. spring-security-web
-	
-	b. spring-security-config
+2. spring-security-config
 
 On the authentication service side, generate JWT and add it as "Autherization: Bearer" token.  May consider writing it in an authentication filter that extends RequestHeaderAuthenticationFilter 
 

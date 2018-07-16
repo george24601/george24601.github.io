@@ -37,7 +37,8 @@ def consumer():
 
 # Readers - writers problem
 
-```
+```python
+
 reader_count = 0
 read_lock = 1
 write_lock = 1
@@ -59,6 +60,7 @@ def write(v):
 	down(write_lock)
 	write_op(v)
 	up(write_lock)
+
 ```
 
 # Dining philosophers problem

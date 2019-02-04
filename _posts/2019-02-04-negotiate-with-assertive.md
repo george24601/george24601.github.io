@@ -5,9 +5,9 @@ description: ""
 category: 
 tags: [pm, interview]
 ---
+Notes on "Never Split the Difference" by Christopher Voss and Tahl Raz.
 
-* Myself is analytical, which is the worst type match with assertives. 
-* Analyst type does not enjoy "What"/"How" questions, maybe need to find a way to spar it?
+* Myself is analytical, which is the worst type match with assertives. Analyst type does not enjoy "What"/"How" questions, maybe need to find a way to spar it?
 * To assertives, getting things done is more important than making it perfect. 
 * They need to think you understand them before listening to your pov
 * They will keep talking on every moment of slience. This leaves the room for mirroring technique

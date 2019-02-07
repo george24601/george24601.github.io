@@ -18,6 +18,7 @@ Notes on "Never Split the Difference" by Christopher Voss and Tahl Raz.
   * Rinse and repeat if needed 
 * Try NOT to offer trade-offs/reciprocity, because assertives will ask for more. Conversely, if they give up something, they expect something equal or more in return.
 * Get "That's right" from them, because that is a sign they FEEL they own the conclusion.
+  * Can follow up with a "According to $(name)..."
   * On the other hande, "you are right" means almost nothing, and should not definitely taken as sign of progress
   * I will try. You are right = I plan to fail. In this case, drill again with a "how" when you get a "that's right"
 * When the negotiation is going off-track/losing focus, just invite them to re-engage 

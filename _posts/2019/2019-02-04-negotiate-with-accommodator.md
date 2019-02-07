@@ -10,7 +10,7 @@ Notes on "Never Split the Difference" by Christopher Voss and Tahl Raz.
 Run into this type a lot in Tokyo
 
 * Time spend communicating is a sign of building relationship, which they value
-* Ask what/how questions to let them trasnlate talk to implementation. This lets the counterpart feel you need their intelligence to overcome the problem and they have the control on defining success. Such feeling appeals much to people with egos.
+* Ask what/how questions to let them trasnlate talk to implementation. This lets the counterpart feel you need their intelligence to overcome the problem and they have the control on defining success. Such feeling appeals much to people with egos. It also makes people feel it is THEIR idea.
   * Avoid binary questions
   * Avoid when/where questions which can be answered without too much thinking
   * Avoid why questions, because it is easy to trigger people into fight or flight mode

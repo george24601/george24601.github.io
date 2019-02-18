@@ -36,3 +36,5 @@ static class Node<K,V> implements Map.Entry<K,V> {
 
 * Array of Node. Put() is done by CAS first, and then synchronize on the node if CAS failed
 * Get() does not synchronize on objects at all - it is protected by the volatile
+
+* When iterating entrys, prefer EntrySet to retrive k & v at the same time.

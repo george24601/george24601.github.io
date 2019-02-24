@@ -6,7 +6,8 @@ category:
 tags: [pm]
 ---
 
-Mostly based on [this doc](https://medium.freecodecamp.org/how-to-write-a-good-software-design-document-66fcf019569c)
+Mostly based on [this doc](https://medium.freecodecamp.org/how-to-write-a-good-software-design-document-66fcf019569c) and
+[this](https://medium.freecodecamp.org/how-to-effectively-scope-your-software-projects-from-planning-to-execution-e96cbcac54b9)
 
 ### Common sections
 
@@ -24,8 +25,10 @@ Mostly based on [this doc](https://medium.freecodecamp.org/how-to-write-a-good-s
 * Non-goals
 * Milestones
   * For PM and manager's manager to quick read
+  * Set up milestones and check points. Ideally, milestones should enable partial launch of the project
 * Current solution
   * Probably need to include user stories (from different povs) to show how the solution behaves dynamically
+  * De-risk the project ASAP, by focusing on the risk part and prototyping and scaffolding
 * Proposed solution
   * Probably need to prototype before you are able to propose
   * Details go here. Use user stories to show how the system behaves
@@ -38,4 +41,10 @@ Mostly based on [this doc](https://medium.freecodecamp.org/how-to-write-a-good-s
 * Discussion
   * If the discussion has more than 5 comments, in-person discussion is probably better
 * Detailed Scoping and Timeline
-  * By engineers, tech lead, and managers, that is why it is near the end of the doc
+  * By engineers, tech lead, and managers, that is why it is near the end of the doc,i.e., end user is the consumer of the design docs without the scoping part 
+  * Update the scope throughput the project. Most likely you need to update your estimate after each milestone 
+  * Each task step should take 2-3 days max
+  * 1.5x of your estimated dev time to include buffer for interrupt tasks
+  * Timebox open-ended questions and commit to a solution within the box, but be aware of trade-off between time box and long term cost 
+  * Dropping the project or stop it right after certain milestone is an option too. 
+

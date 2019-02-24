@@ -9,6 +9,7 @@ tags: [java, interview]
 * NOT recommend to create via Executors static factory, instead, use ThreadPoolExecutor
 * Recommend to use newCacheThreadExecutor, defaults to ThreadPoolExecutor
 * Real TP interface is ExecutorService / ScheduledExecutorService
+* Note that in general try NOT to create new threads explicitly. Let TP provide one.
 
 ### Constructor params
 
@@ -43,5 +44,11 @@ tags: [java, interview]
 4. acquire the main lock for TP, add thread to workers, start the new thread
 5. workers is a hashset
 
+```java
+//graceful shutdown
+pool.shutdown();
+while(!pool.awaitTermination(1, TimeUnit.SECONDS)){
 
+}
+```
 

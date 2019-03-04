@@ -19,15 +19,8 @@ smaller than the outer band
 Find SCC of the directed graph, for each SCC, put one post on the one with lowest value. and then put one for each v outside SCCs
 
 
-518D:  Ilya and Escalator
----------
-consider at time t
-
-1. if n - 1 has not boarded yet by t, do nothing
-
-2. if n - 1 has boarded by t - 1, either p board, or stay
-
-pr(n board by t) = p * pr(n-1 boarby by t -1) + (1-p) * pr(n boarby by t - 1)
+### 518D:  Ilya and Escalator
+O(n^2) dp, special case at cnt = 0 or cnt = n
 
 
 

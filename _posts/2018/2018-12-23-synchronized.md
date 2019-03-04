@@ -27,7 +27,9 @@ tags: [interview, currency]
 
 ### Biased lock
 
-* Thread will store its id in the Mark word. When entering and leaving sync block it will not use CAS to lock/unlock, it will CAS the thread id instead
+* Thread will store its id in the lock object's mark word. When entering and leaving sync block it will not use CAS to lock/unlock, it will CAS the thread id instead. When the thread id is different from the current one:
+  * If biased mark is 0, means it is LW lock already, use LW's CAS to acquire lock
+  * If biased mark is 1, just CAS to change thread id to current id. If this CAS failed, will ask the cancel the biased lock, and pause the thread holding the biased lock to check if the that thread is still active
 * Thread will not release biased lock itself. When no bytecode is running, the thread holding biased lock checks if the lock object is locked or not, and will cancel biased lock to restore to no-lock(01) or lightweight lock (00), depending on the answer
 
 ### Lightweight lock
@@ -35,7 +37,7 @@ tags: [interview, currency]
 * Other thread will spin to try acquiring the lock but will not block
 * if the sync obj lock is 01, jvm will setup a Lock Record in the stack frame to store the lock object's Mark Word, and then use CAS to change object's mark word to pointer to the Lock Record, and set Lock Record's owner to object's Mark Word, if good, then Mark Word's lock status is 00
 * if update failed, jvm will check object's mark word is pointing to current thread's stack frame, if only 1 waiting, the thread will just spin, if the thread spins too many times, or one thread is hold, one spinning, and a third coming, LWL will upgrade to HWL
-* When release, try CAS to replace Mark Word back into object header. if failed, means there is contention with the lock, upgrade to HWL
+* When release, try CAS to replace Mark Word back into object header. if failed, means there is contention with the lock, release the lock, upgrade to HWL, and wake up blocked threads
 
 ### Heavyweight lock
 

@@ -8,19 +8,17 @@ tags: []
 
 567D: One-Dimensional Battle Ships
 ----------------
-For each insertion, we update the max possible # of ships, by finding its lower and upper bound, and calculate the delta. When we reduce the total # < k, we know it is bad
+For each insertion, we update the max possible # of ships, by finding its lower and upper bound, and calculate the delta. When we reduce the total # LT k, we know it is bad
 
-Note that we probably want to storage segments instead of points, because both lower_bound and upper_bound do not return number < current
-one, unless you do iterator-- yourself
-
+Note that we probably want to storage segments instead of points, because both lower_bound and upper_bound do not return number LT current one, unless you do iterator-- yourself
 
 
-552D: Vanya and Triangles(!!!)
---------------
-We are interested in finding number of points in a same line. We use the idea of the equivlanet class,i.e., we iterate all 2 point pairs, calculate the line between it, 
-and use map to store the accumlation result of that line. The offical result uses a hash function to avoid saving the (a,b,c) tuple of a linear equation
 
-One thing to watch out for is the 
+### 552D: Vanya and Triangles
+
+Seems the a brute force n^3 solution works, i.e., are 3 points on the line at all? 
+
+Since two points are enough to define a segment, we can just calculate the equivalent class of its segments, and deduct combination counts. The trick is how to calculate the hash of the segment??!!
 
 
 632A: Grandma Laura and Apples

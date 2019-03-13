@@ -6,23 +6,29 @@ category:
 tags: [pm]
 ---
 
-Mostly based on [this doc](https://medium.freecodecamp.org/how-to-write-a-good-software-design-document-66fcf019569c) and
-[this](https://medium.freecodecamp.org/how-to-effectively-scope-your-software-projects-from-planning-to-execution-e96cbcac54b9)
-
-### Common sections
-
+### Summary section
 * Reviewers to sign off
-* Motivation 
-  * Non-dev should be able to read it
-  * Show how the project is tied to the long-term goals
 * Overview
   * Read by all engineers to decide if they need to keep reading
   * 3 paragraphs max
-* Context
+
+### Context section
+
+Different teams should mostly interact in this section instead of the decision section. So that teams can be highly aligned on goals
+
+* Motivation 
+  * Non-dev should be able to read it
+  * Show how the project is tied to the long-term goals
+* Assumptions
 * Goals 
   * in the dimension of user-driven impact
   * measuable key results
 * Non-goals
+
+### Decision
+
+Mostly for intra-team discussions.
+
 * Milestones
   * For PM and manager's manager to quick read
   * Set up milestones and check points. Ideally, milestones should enable partial launch of the project
@@ -48,3 +54,8 @@ Mostly based on [this doc](https://medium.freecodecamp.org/how-to-write-a-good-s
   * Timebox open-ended questions and commit to a solution within the box, but be aware of trade-off between time box and long term cost 
   * Dropping the project or stop it right after certain milestone is an option too. 
 
+
+### References
+[this doc](https://medium.freecodecamp.org/how-to-write-a-good-software-design-document-66fcf019569c) and
+[this](https://medium.freecodecamp.org/how-to-effectively-scope-your-software-projects-from-planning-to-execution-e96cbcac54b9)
+[Netflix's culture](https://jobs.netflix.com/culture)

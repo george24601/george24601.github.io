@@ -17,6 +17,7 @@ tags: [mysql, interview]
 * By default, Kafka `fsync` asynchronously, i.e., the broker returns ACK after data is copied into page cache
 * Also `mmap` its data file into user's process address space. Note that it is mapped to off-heap memory in JVM to prevent the  GC of actual log data object. (How to check JVM's native memory usage though?)
 * During the send, Kafka copies directly from the page cache to the network card, and socket buffer copies a file descriptor but no data. Note all these data copying happens within the kernel space, i.e., no user -> kernel space copying happened.
+* Note that if JVM heap size is too huge, we may not leave enough to the OS cache, which is the actual busy area! On produciton 6G is probably enough, but leave 20G+ to OS cache on a 32G box
 
 
 Note: fsync just flush buffer specific to an open file

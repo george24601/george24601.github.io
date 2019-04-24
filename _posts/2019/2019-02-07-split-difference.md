@@ -25,10 +25,11 @@ Notes on "Never Split the Difference" by Christopher Voss and Tahl Raz.
   * pause 3-4 secs
   * Rinse and repeat
   * I didn't say that is the actual case, I just said it seems that.
-* Anger shows your passion, but reduces your counterpart's congintive activity due to the emotional mode. You can de-escalate by proposing a time-out
+* Anger shows your passion, but reduces your counterpart's congintive activity due to the emotional mode. You can de-escalate by proposing a time-out. Try to calm emotion before listing theories and facts
 * Something doesn't make sense means chance to discover unknowns! Best discovered during face-to-face communications, near breaks or meeting ends. Hard to discover during emails
 * The word "fair" is often used so the other side goes defensive and gives concessions. Common cases:
   * We just want what is fair -> OK I am sorry, let us get back to where the fair part begins
   * We have given you a fair offer -> Mirror: Fair? + Label: It seems that you have evidence to support it.
   * Powerful: Stop me at any time if you feel I am being unfair
-
+* List the worst thing the other side could say and say them first, this will encourage the counterpart to say what the opposite is true
+* When you sell yourself to the manager, sell yourself as ways to prove their own intelligence and that they can broadcast to the rest of the company, i.e., you are the proof of HIS importance, let him have a stake in your success

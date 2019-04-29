@@ -23,7 +23,7 @@ When a pod is pending, it means the required resources are not satisfied. The mo
 
 * CPU, memory or storage insufficient
 * Storage class not exist or no PV available
-* By default TiDB service is exposed using NodePort. You can modify it to ClusterIP which will disable access from outside of the cluster. Or modify it to LoadBalancer if the underlining Kubernetes supports this kind of service.
+* By default TiDB service is exposed using NodePort. You can modify it to ClusterIP which will disable access from outside of the cluster. Or modify it to LoadBalancer if the underlying Kubernetes supports this kind of service.
 * It's recommended to do horizontal scaling other than vertical scaling when workload increases. Just modify the replicas of PD, TiKV and TiDB in values.yaml file.
 * By default the monitor data is not persistent, when the monitor pod is killed for some reason, the data will be lost. This can be avoided by specifying monitor.persistent to true in values.yaml file.
 

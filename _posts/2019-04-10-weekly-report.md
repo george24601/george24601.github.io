@@ -30,6 +30,7 @@ Common parts:
 * May use metric dashboards and other visualization tool when there are too many metrics.
 * Maintain a daily log on activities 
 * Do not wait for better result. Send report in-schdule, and we can update in person later.
+* Focus on accompolishments than tasks! Task is for ICs!
 
 ### Next week's plan
 
@@ -38,6 +39,10 @@ Common parts:
 * Milestones should be SHARP, we can even trade being measurable for sharpness 
 * May include relationship with long term goals
 
+
+* Managers shall not just read, but make comments in the employee's report. Giving employees feedback is crucially important.
+* Weekly report is an effective way to get credits. Also, improves your visibility
+* Send it 24 hours before the report
 
 
 #### References 

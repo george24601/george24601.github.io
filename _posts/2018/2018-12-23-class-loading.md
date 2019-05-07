@@ -30,6 +30,7 @@ tags: [jvm, interview]
 * Extension ClassLoader: load JAVA_HOME/libext and java.ext.dirs
 * Application ClassLoader: classpath in the normal sense.
 * User ClassLoader: inherits form Application ClassLoader
+* When do you need your own class loader??
 
 
 ### Parent delegation model for loadClass()

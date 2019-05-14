@@ -6,6 +6,7 @@ category:
 tags: [interview]
 ---
 
+The purpose here is not to show that this strategy is perfect. It just shows the inherent complexity in hiring. Whatever schemes you devise is just luck in filtering out "maybe-no"s. However, the bar happens to be much higher than what your actual job needs in many places. Thus, whatever hazing ritual shows good result, and we have to accept that as part of life and play by the rule.
 
 ### When N is know
 Note its difference between real life
@@ -27,3 +28,4 @@ But timeframe T is known, and candiates appears in the same (not necessarily uni
 
 * Then we pick the the moment where the combined possibily that the best candiate appeared so far is 1/e
 * 1/e chance you will get the best candidate, and 1/e chance you pick no one AT ALL
+

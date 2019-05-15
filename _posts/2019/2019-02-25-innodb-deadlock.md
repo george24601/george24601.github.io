@@ -69,3 +69,6 @@ Sequence of actions:
 3. A wants X gap lock on (3, 10], blocked
 4. B wants X gap lock on (3, 10], blocked 
 
+### Common solutions to DL
+1. acquirng/relase in the same order
+2. timed wait, and then release if not able to acquire (defaults to 50s in mysql)

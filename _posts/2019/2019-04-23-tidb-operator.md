@@ -3,7 +3,7 @@ layout: post
 title: "Notes on TiDB Operator"
 description: ""
 category: 
-tags: [tidb]
+tags: [tidb, k8s]
 ---
 
 TO = TiDB Operator

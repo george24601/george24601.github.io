@@ -10,6 +10,7 @@ TO = TiDB Operator
 TPR = (k8s) third party resource
 PV = persistent volume
 
+* An operator is an application-specific controller mostly to handle stateful applications. The controller watches changes to etcd (state behind k8s api server), and executes corresponding changes
 * Use k8s's TPR API to encapsulate ops domain knowledge into the operator, and then inject the module to the k8s. TO to K8s is like bash to OS
 * We should use local volume to persist for prod, but we can use networked volume for backup. Know that local PV uses special rules for failover
   * When one machine is down, the pod's local PV may not be restored => stateful set itself is not enough
@@ -32,5 +33,5 @@ When a pod is pending, it means the required resources are not satisfied. The mo
 1. Create a k8s config map for tidb storage. Storage's physical resource is inside the config, e.g., machine's IP, disk's corresponding folder
 2. Create a tidb-volume TPR, this resource reads the physical disk status and converts the disk resources into a TPR too
 3. Create a volume controller to mark the usage status of the resources, VC also montiors config map's physical resource in RT
-4. Pakcage the local disk resource boot instances
+4. Package the local disk resource boot instances
 5. Create daemonset to maintain disk's resource usage, e.g., when a tikv node is down, you need to delete and clear data.

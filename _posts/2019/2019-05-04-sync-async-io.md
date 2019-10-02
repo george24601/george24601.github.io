@@ -18,3 +18,13 @@ tags: [java, interview]
   * mmap maps the file/object into user process's address space. Note that we still need to copy from kernel read buffer to kernel socket buffer if we want to send to the network drive.
   * Sendfile means data transfer happens only inside the kernel space, and kernel buffer's memeory address and offset will be recorded into socket buffer. This saves the cpu copy from kernel read buffer to kernel socket buffer
   * In java, MapppedByteBuffer, DirectByteBuffer, Channel-to-Channel
+
+### Unix IO models
+* Blocking IO: process uses `recvfrom`, which copies from kernel space to user space
+* Non blocking: polling to check if kernel has prepared the data yet, still via `recvfrom`
+* Event-driven: process ues `sigaction`, kernel will notific with SIGIO, and then process `recvfrom`
+* Io-reuse: multiple process's IO can register on the smae channel, i.e., `select()`. Note that after `select()`, the process has to wait until at least one required data is ready and then return
+* Async io:  `aio_read` with FD, buffer pointer, buffer size, after the kernel prepared the data, will copy it to the user space, and send signal
+
+
+

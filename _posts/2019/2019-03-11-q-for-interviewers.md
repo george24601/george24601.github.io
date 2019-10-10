@@ -16,3 +16,5 @@ Most importantly, come up with a list of questions that matter most to you! As a
 * What is the need behind hiring for this role? What happened to the last person in this role?
 * What’s your favorite part about working at the company?
 * From background/resume, what parts would make you doubt i would be a great fit for the company?
+* What motivated you to join the organisation?
+* I have read that you have just launched x. What will that mean for the growth of this role?

@@ -39,3 +39,11 @@ Reduce the traffic layer by layer
   2. add to the a blocking Q
   3. log + warning
 * To test: redirect prod traffic to a small subset of service, and see if the rate limiter is in effect, i.e., the shape of the TPS graph should be more reasonable
+
+
+### Idempotency
+* Have a token on the request, use redis to check
+ * Use DEL to check if it is dup or not. Successful DEL means it is first time
+ * TTL 5 mins. Token can be generated on the service side before the data is submitted
+* Distributed lock
+* API needs to accept source + seq at the same time, and they should form a unique inde

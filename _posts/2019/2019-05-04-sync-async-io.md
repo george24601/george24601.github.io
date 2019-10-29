@@ -18,6 +18,7 @@ tags: [java, interview]
   * mmap maps the file/object into user process's address space. Note that we still need to copy from kernel read buffer to kernel socket buffer if we want to send to the network drive.
   * Sendfile means data transfer happens only inside the kernel space, and kernel buffer's memeory address and offset will be recorded into socket buffer. This saves the cpu copy from kernel read buffer to kernel socket buffer
   * In java, MapppedByteBuffer, DirectByteBuffer, Channel-to-Channel
+  * In later Linux versions, use DMA to copy file content to kernel's read buffer, and then pass the FD with data location and length info to the socket buffer, and DMA direct transfers from kernel buffer to protoplc engine. Note in the who process no CPU is involved
 
 ### Unix IO models
 * Blocking IO: process uses `recvfrom`, which copies from kernel space to user space

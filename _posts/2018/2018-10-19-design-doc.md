@@ -7,7 +7,13 @@ tags: [pm]
 ---
 
 ### Summary section
-* Reviewers to sign off
+
+* Roles of stakeholders, e.g. , PACSI
+  * Perform: carry out
+  * Accoutable: one single owner
+  * Control: review the results, can veto. binding advice
+  * Suggest: non-binding advice
+  * Informed: should know the result of activity. Do NOT have a say in how work is done 
 * Overview
   * Read by all engineers to decide if they need to keep reading
   * 3 paragraphs max
@@ -56,6 +62,6 @@ Mostly for intra-team discussions.
 
 
 ### References
-[this doc](https://medium.freecodecamp.org/how-to-write-a-good-software-design-document-66fcf019569c) and
-[this](https://medium.freecodecamp.org/how-to-effectively-scope-your-software-projects-from-planning-to-execution-e96cbcac54b9)
-[Netflix's culture](https://jobs.netflix.com/culture)
+* [Design doc](https://medium.freecodecamp.org/how-to-write-a-good-software-design-document-66fcf019569c)
+* [Scope](https://medium.freecodecamp.org/how-to-effectively-scope-your-software-projects-from-planning-to-execution-e96cbcac54b9)
+* [Netflix's culture](https://jobs.netflix.com/culture)

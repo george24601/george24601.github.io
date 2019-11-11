@@ -33,3 +33,5 @@ Notes on "Never Split the Difference" by Christopher Voss and Tahl Raz.
   * Powerful: Stop me at any time if you feel I am being unfair
 * List the worst thing the other side could say and say them first, this will encourage the counterpart to say what the opposite is true
 * When you sell yourself to the manager, sell yourself as ways to prove their own intelligence and that they can broadcast to the rest of the company, i.e., you are the proof of HIS importance, let him have a stake in your success
+* Power Sales Negotiators know that splitting the difference does not mean splitting it down the middle. Just split the difference twice and the split becomes 75 percent/25 percent. Furthermore, you may be able to get the other party to split the difference three or more times.
+* The first thing to remember is that you should never offer to split the difference yourself, but always encourage the other person to offer to split the difference.

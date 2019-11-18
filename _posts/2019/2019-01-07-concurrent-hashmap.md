@@ -6,13 +6,14 @@ category:
 tags: [java, interview]
 ---
 
+* How multi-threads increase sizes in parallel?
+* How to ensure we can still operate when resizing?
+
 ### Size
 * Array init size defaults to 16. Double the size when it is 75% full
 * Length is always a power of two, because `hash%length==hash&(length-1)`
   * How to avoid/optimize rehash when resizing
 * When array length > 64 and some link list(LL) length > 8, this LL will be changed to red-black tree(RBT)
-
-How multi-threads increase sizes in parallel?
 
 ### Other related collection types
 

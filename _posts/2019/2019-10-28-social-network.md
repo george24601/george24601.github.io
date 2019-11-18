@@ -37,3 +37,17 @@ Notification to group member - 1 copy, for each member, keep a last_ack_time. Us
 2. Need seperate table to store user -> fan, and user -> follows, for write and read broadcast
 3. Each user also stores feeds it received. 
 4. Optimization: separate user into groups, only push for active users
+
+### Likes
+Need to keep track of like counts and who liked the comment
+
+* One design
+  * Store the like in reids, and persist it to db asyncly
+  * Use hash to store the all likes related to a post
+  * On db, store the like operation, post_id, user_id, created_at, update_at
+  * The main problme with this design is the large key problem
+* Design 2
+  * Use bloomfilter to store posts one user liked
+  * Insert into db like activity
+  * Update the like cnt and store post one user liked via hyperloglog
+  * Use 

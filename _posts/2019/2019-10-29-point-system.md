@@ -36,3 +36,17 @@ On top that, standard idempotency, MQ, retry
 * Payment system
   * Often calls back to the order system to ACK
 * Delivery/Storage system
+
+### Order phases
+* Before generating order: txn systems. Online/sync
+  * shopping carts - can stay in cache
+  * order details
+  * fee calculation
+* Generate order: order system. Online/sync
+  * balance
+  * point and coupon
+  * stock freeze
+  * generate order and item
+* After generation: fulfillment. Offline/async
+  * reivew
+  * delivery

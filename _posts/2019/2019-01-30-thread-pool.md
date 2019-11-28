@@ -24,18 +24,18 @@ tags: [java, interview]
     * Insertion is done by BlockingQueue.offer(), which will not throw exception or block.
   * threadFactory
   * RejectedExecutionHandler handler - when out of thread range or queue capacity
-* The state of TPE
+* The state of TPE,i.e., highest 3 bits of the atomic `ctl` value
   * RUNNING
   * SHUTDOWN: shutdown(), no new task will be accepted, but will finish executing the jobs in the task queue
   * STOP: shutdownNow(), no new task, not executing tasks in the q
   * TIDYING: all tasks completed, will execute terminated()
   * TERMINIATED: after termiated() is run
+* submit() vs execute()
 
 ### Building pieces of the TPE
 
 ```java
-class Worker extends AbstractQueuedSynchronizer 
-implements Runnable
+class Worker extends AbstractQueuedSynchronizer implements Runnable
 {
        Runnable firstTask;
        final Thread thread;

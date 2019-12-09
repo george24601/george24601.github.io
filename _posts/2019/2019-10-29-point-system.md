@@ -3,7 +3,7 @@ layout: post
 title: "System design: point system for ecommerce"
 description: ""
 category: 
-tags: [interview]
+tags: [interview, design]
 ---
 
 All e-commerce order systems follow very similar patterns
@@ -22,7 +22,12 @@ All e-commerce order systems follow very similar patterns
   * Product id, cnt,....etc
   * tracking number, for 3rd party courier
 
-On top that, standard idempotency, MQ, retry
+### Idempotency
+* Get token from service with TTL
+  * On submit, try deletion. If does not work, reject the request
+* Optimisitc lock: version col on DB row
+* Some people propose distributed lock too. But I don't see point in it 
+* API needs to require both source and seq as params
 
 ### General e-commerce components
 * Catalog service for products

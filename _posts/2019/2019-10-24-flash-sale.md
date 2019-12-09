@@ -7,6 +7,7 @@ tags: [interview]
 ---
 
 ### General workflow
+
 * Dedup multiple requests from the same user
   * unique token for each submission request on the frontend
   * redis for consitency check, set 5 mins expire time
@@ -14,19 +15,23 @@ tags: [interview]
   * API needs to accept source + seq at the same time, and they should form a unique inde
   * Can also use standard distributed lock
 * check storage. User is redirected to waiting page instead of the sales page now
-  * optimisitic lock
+  * optimisitic lock/or distributed lock. Note that pessimistic lock has bad performance
   * storage cache in redis, 5 mins expiry time
   * MQ 
 * deduct storage 
+  * If order and then deduct, then people may create many orders without paying
 * create order 
   * Cancel order can be done via MQ
   * Status is polling by the waiting page
 * pay
+  * If no pay by a certain time, release the storage
+  * If pay and then deduct, user may order but will not be able to pay
 
 ### Rate limiting
 
-Reduce the traffic layer by layer. Needs to be done on both producer and consumer
-
+* Reduce the traffic layer by layer. Needs to be done on both producer and consumer
+  * ngx_http_limit_conn_module, ngx_http_req_module
+* Often need to RL at dynamic hotspots
 * Tools:
   1. Token bucket - no need to be producer-consumer, and calcuate last token's timestamp and we can calcualte how many tokens we need to add. Good for blocking case. Good for no SUDDEN change of traffics.Constant incoming rate, stop putting into bucket when the capacity is full. If bucket is full in token Bucket , token are discard not packets. While in leaky bucket , packets are discarded, and can send large burst. The goal is to limit AVG and accept certain bursts
   2. Leaky bucket - unlike token bucket, need to take out token at the rate of t/n. Good for blocking case. less resource utiliation than token bucket, i.e., max output rate, goal is to limit output

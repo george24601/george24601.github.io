@@ -56,6 +56,3 @@ LISTEN FIRST, SPEAK LAST
   * Sum up
   * Immediately followed by an after-meeting memo, which summarized discussions, conclusions, and action items/assignments/deadline. This memo is cced to every participants 
 
-
-
-

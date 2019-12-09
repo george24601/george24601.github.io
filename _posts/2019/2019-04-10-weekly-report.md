@@ -6,6 +6,10 @@ category:
 tags: [pm]
 ---
 
+* The presence of rigid, email-based status reports comes down to control, a lack of imagination, and a lack of trust in the organization. However, strategic assessment of the week is still needed, i.e., what is working and what is not
+  * Often a good candidate for 1:1
+
+
 Common parts:
 
 * Date and list of stakeholders

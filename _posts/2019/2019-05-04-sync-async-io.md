@@ -13,12 +13,15 @@ tags: [java, interview]
 * In fact, most non-blocking is implmented by self-spinning, but encapsulated but encapsulated as sync/blocking. 
 * Java AIO is purely async + non-blockng, it returns immediately and you need to pass the callback function at construction
 * Cocurrency is the fact that multiple tasks can progress over a period of time. Parallelism means they can progress AT THE SAME TIME
+
+### Zero-copy
+
 * Note that data needs to be copied from kernel space buffer to user space buffer, and vice versa. This motivates the zero-copy techinique
-  * map the kernel space address and user process's address into the same physical memory
+  * Direct buffer maps the kernel space address and user process's address into the SAME physical memory
   * mmap maps the file/object into user process's address space. Note that we still need to copy from kernel read buffer to kernel socket buffer if we want to send to the network drive.
   * Sendfile means data transfer happens only inside the kernel space, and kernel buffer's memeory address and offset will be recorded into socket buffer. This saves the cpu copy from kernel read buffer to kernel socket buffer
   * In java, MapppedByteBuffer, DirectByteBuffer, Channel-to-Channel
-  * In later Linux versions, use DMA to copy file content to kernel's read buffer, and then pass the FD with data location and length info to the socket buffer, and DMA direct transfers from kernel buffer to protoplc engine. Note in the who process no CPU is involved
+  * In later Linux versions, use DMA to copy file content to kernel's read buffer, and then pass the FD with data location and length info to the socket buffer, and DMA direct transfers from kernel buffer to protocol engine/NIC buffer. Note in the who process no CPU is involved
 
 ### Unix IO models
 * Blocking IO: process uses `recvfrom`, which copies from kernel space to user space

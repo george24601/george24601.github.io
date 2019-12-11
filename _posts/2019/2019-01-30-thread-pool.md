@@ -30,7 +30,8 @@ tags: [java, interview]
   * STOP: shutdownNow(), no new task, not executing tasks in the q
   * TIDYING: all tasks completed, will execute terminated()
   * TERMINIATED: after termiated() is run
-* submit() vs execute()
+* submit() returns Future vs execute() returns nothing
+
 
 ### Building pieces of the TPE
 
@@ -62,7 +63,7 @@ Future<?> submit(Runnable task) {
 ```
 
 * `runner` is CASed as the `Thread.currentThread()` from null. This also acts as the mutex check 
-* `callable` is turned from `runnable` by the Executor
+* `callable` is turned from `runnable` by the Executor. Callable returns result and may throw exceptions 
 
 ### TPE.execute()
 

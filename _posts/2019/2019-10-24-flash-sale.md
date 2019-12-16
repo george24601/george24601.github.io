@@ -16,7 +16,7 @@ tags: [interview]
   * Can also use standard distributed lock
 * check storage. User is redirected to waiting page instead of the sales page now
   * optimisitic lock/or distributed lock. Note that pessimistic lock has bad performance
-  * storage cache in redis, 5 mins expiry time
+  * storage cache in redis, 5 mins expiry time. Note that we can set the count sightly higher than the actual storage, and reject the out of stock one at the next level
   * MQ 
 * deduct storage 
   * If order and then deduct, then people may create many orders without paying

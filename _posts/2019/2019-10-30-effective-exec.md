@@ -27,10 +27,10 @@ LISTEN FIRST, SPEAK LAST
 ### Responsible for decision
 
 * A decision must have all stakeholders and their precision roles in the decision
-* Also a deadline must be included    i
+* Also a deadline must be included
 * Hiring/promoting is often the most difficult decision. Expect 1/3 success rate, and revisit people decision after 6 months. 
   * Even if it is a failure, it is the exec's mistake, not the failed person, BUT this person has to be removed - offer them to go back to the original level
-* On weak areas, delegate 
+* On weak areas, delegate
 
 ### Focus on oppurtunities than problems
 

@@ -31,6 +31,7 @@ tags: [interview]
 
 * Reduce the traffic layer by layer. Needs to be done on both producer and consumer
   * ngx_http_limit_conn_module, ngx_http_req_module
+  * intecetpor at the service + centralized redis counter
 * Often need to RL at dynamic hotspots
 * Tools:
   1. Token bucket - no need to be producer-consumer, and calcuate last token's timestamp and we can calcualte how many tokens we need to add. Good for blocking case. Good for no SUDDEN change of traffics.Constant incoming rate, stop putting into bucket when the capacity is full. If bucket is full in token Bucket , token are discard not packets. While in leaky bucket , packets are discarded, and can send large burst. The goal is to limit AVG and accept certain bursts

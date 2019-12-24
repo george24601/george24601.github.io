@@ -39,7 +39,6 @@ LISTEN FIRST, SPEAK LAST
 * Put best people on oppurtunities than problems.
 
 ### Run productive meetings
-
 * Make sure all participants agree on why the meeting is happening
 * Don't sign up for committee meetings
 * Don't brainstorm together. Brainstorm offline, and use meeting to review and eval the ideas. People should feel free to criticize DURING the meeting
@@ -50,9 +49,9 @@ LISTEN FIRST, SPEAK LAST
   * A few member reports: No discussion, or questions for clarification only, or discussion where all participants ask questions. In this case, distribute report before the meeting, and timebox it (e.g., 15 mins)
   * Inform the exec: Exec should listen and ask questions, he should sum up but not making the presentaion
   * Meeting just to be in exec's presence: lunch/dinner format ONLY
+* Designate someone to take notes in the meeting.
 * Sloan's meeting method
   * Annouce the purpose
   * Listen and only clarify points
-  * Sum up
+  * Sum up what to be included in the memo at the end of each disscussion point or end of meeting
   * Immediately followed by an after-meeting memo, which summarized discussions, conclusions, and action items/assignments/deadline. This memo is cced to every participants 
-

@@ -42,4 +42,4 @@ tags: [interview, currency]
 ### Heavyweight lock
 
 * When upgrading to heavy weight lock, lock status changed to "10", Mark Word stores pointer to HWL, all waiting threads wil block
-* The synched object will point to the created monitor object, i.e., the monitor inside the object, which in turns based on MutexLock from OS - blocking and waking up requiring OS, i.e., from user mode to kernel mode
+* The synched object will point to the created monitor object, i.e., the monitor inside the object, which in turns based on MutexLock from OS - blocking and waking up requiring OS, i.e., from user mode to kernel mode (hence "heavy")

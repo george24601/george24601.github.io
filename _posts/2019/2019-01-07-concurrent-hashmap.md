@@ -17,7 +17,9 @@ tags: [java, interview]
 ### Hashmap's concurrency problem
 
 * When insert two elements with the same hash, while there is no existing node at the entry, in `putVal()`
+
 ```java
+
     if ((p = tab[i = (n - 1) & hash]) == null) 
             tab[i] = newNode(hash, key, value, null);
 

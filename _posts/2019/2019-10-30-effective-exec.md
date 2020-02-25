@@ -55,3 +55,4 @@ LISTEN FIRST, SPEAK LAST
   * Listen and only clarify points
   * Sum up what to be included in the memo at the end of each disscussion point or end of meeting
   * Immediately followed by an after-meeting memo, which summarized discussions, conclusions, and action items/assignments/deadline. This memo is cced to every participants 
+* Too many meetings means the responsibility is too decentralized. In a lean org, people should be able to move around without collsion and explaining their work all the time. Otherwise, the org is overstaffed 

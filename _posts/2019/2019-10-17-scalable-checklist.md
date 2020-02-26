@@ -35,7 +35,14 @@ Backend engineers developing Java microservices
     * Rationale: The system can not process fast enough already, adding in the task queue will not help with the task processing time
 * Do NOT make any remote/inter-process calls when you are inside a mutex. 95% of chance such code is wrong
 * The network latency between nodes in our DC is about 1-2 ms. Do not issue sequential network call, as the latency will add up quickly
-* Low timeout so we can fail early, which also protects the downstream system. Timeout should be no more than 2s on UX-impacting calls
+* Low timeout so we can fail early, which also protects the downstream system. Timeout should be no more than 2s on UX-impacting calls (may even consider 1s)
+
+### Operation
+* Health check
+  * The thread answering health check is often different from the worker thread. To prevent the ninja work done by the worker thread, upon detecting health check failure, make sure you shut down the whole process
+  * ELB is default check is 10s time out, and will register the instance as failed after 3 times. This is too generous if the load balancer is within 100 KM of the instances,i.e., failure may not be detected enough
+  * When the same region scenario, consider health check timeout of 1s, with 3 as the failure threshould, and 2 as success threshould
+
 
 ### RDS
 * Memory should be able to hold all indices. You can estimate the size of indices by (number of rows * avg size of primary keys)

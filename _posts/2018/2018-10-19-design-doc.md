@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On the writing software doc" 
+title: "How to write design doc"
 description: ""
 category: 
 tags: [pm]
@@ -8,9 +8,9 @@ tags: [pm]
 
 ### Summary section
 
-* Roles of stakeholders, e.g. , PACSI
+* Roles of stakeholders. Declare it explicitly for each person. Important roles includes:
   * Perform: carry out
-  * Accoutable: one single owner
+  * Accountable: one single owner
   * Control: review the results, can veto. binding advice
   * Suggest: non-binding advice
   * Informed: should know the result of activity. Do NOT have a say in how work is done 
@@ -38,15 +38,14 @@ Mostly for intra-team discussions.
 * Milestones
   * For PM and manager's manager to quick read
   * Set up milestones and check points. Ideally, milestones should enable partial launch of the project
-* Current solution
+* Current/Proposed solution
   * Probably need to include user stories (from different povs) to show how the solution behaves dynamically
   * De-risk the project ASAP, by focusing on the risk part and prototyping and scaffolding
-* Proposed solution
   * Probably need to prototype before you are able to propose
   * Details go here. Use user stories to show how the system behaves
   * Include precise pseudo code and data structure
   * Someone didn't write the doc but understands the problem should be able to implement the solution 
-* Alternative Solutions
+* Alternative and Rejected Solutions
 * Monitoring and Alerting
   * Probably include correctness invariant and testing strategy. Testing strategy needs to be detailed too
 * Cross-Team Impact
@@ -60,6 +59,24 @@ Mostly for intra-team discussions.
   * Timebox open-ended questions and commit to a solution within the box, but be aware of trade-off between time box and long term cost 
   * Dropping the project or stop it right after certain milestone is an option too. 
 
+## A example template
+* Context and motivation 
+* Assumptions and prerequisites
+* Goals
+  * in the dimension of user-driven impact
+  * measuable key results
+* Non-goals
+* Role assignment for each member, use one of the following role:
+  * Perform: carry out
+  * Accountable: one single owner
+  * Control: review the results, can veto. binding advice
+  * Suggest: non-binding advice
+  * Informed: should know the result of activity. Do NOT have a say in how work is done 
+* Current/Proposed solution
+* Alternative/Rejected Solutions
+* Cross-Team Impact
+* Monitoring and Alerting
+* Milestones/Timelines
 
 ### References
 * [Design doc](https://medium.freecodecamp.org/how-to-write-a-good-software-design-document-66fcf019569c)

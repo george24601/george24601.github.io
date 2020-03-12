@@ -10,7 +10,13 @@ Source version 2.1
 
 ### What is txnLockFast error
 
-This is triggered when read txn with read_start_ts happens between the write txn's write_start_ts and write_commit_ts. Upon seeing this, read will backoff retry later witht the same read_start_ts, so that we preserve snapshot isolation. The effect is similar to pessimistic lock but with higher latency
+This is triggered when read txn with read_start_ts happens between the write txn's write_start_ts and write_commit_ts. Upon seeing this, the read txn will backoff retry later witht the same read_start_ts, so that we preserve snapshot isolation. The effect of txnLockFast is similar to pessimistic lock but with higher latency
+
+### tidb_tikvclient_backoff_seconds_count
+
+Triggered by expression `increase( tidb_tikvclient_backoff_seconds_count[10m] )  > 10` 
+
+`tidb_tikvclient_backoff_seconds_count` is a range vector which contains counters. This expression means it happensin more than 10 of the seconds in the last 10 minutes 
 
 
 ### Data structures

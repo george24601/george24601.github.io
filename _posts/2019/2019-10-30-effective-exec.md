@@ -16,18 +16,16 @@ LISTEN FIRST, SPEAK LAST
 * Focus on ONLY one urgent task at a time
   * After it is done, re-eval priorities instead of the moving on to the second most urgent
 
-
 ### Develop action plans
 
 * Action plan states intention but not commitment. Even if it is written, should expect to revisit and revise often
 * Organizations are time-wasters in nature
-* Most likely you don't stick with the original plan, but without planning, you become a prisoner of events. Also need regualr check-in to figure out which ones truly matter
-
+* Most likely you don't stick with the original plan, but without planning, you become a prisoner of events. Also need regular check-in to figure out which ones truly matter
 
 ### Responsible for decision
 
 * A decision must have all stakeholders and their precision roles in the decision
-* Also a deadline must be included
+  * Also a deadline must be included
 * Hiring/promoting is often the most difficult decision. Expect 1/3 success rate, and revisit people decision after 6 months. 
   * Even if it is a failure, it is the exec's mistake, not the failed person, BUT this person has to be removed - offer them to go back to the original level
 * On weak areas, delegate
@@ -39,6 +37,7 @@ LISTEN FIRST, SPEAK LAST
 * Put best people on oppurtunities than problems.
 
 ### Run productive meetings
+
 * Make sure all participants agree on why the meeting is happening
 * Don't sign up for committee meetings
 * Don't brainstorm together. Brainstorm offline, and use meeting to review and eval the ideas. People should feel free to criticize DURING the meeting

@@ -6,37 +6,38 @@ category:
 tags: [database, architecture, aurora]
 ---
 
-Objectives
------
+### Objectives
+
 1. Verify that our services on Aurora can still perform within SLA with degraded aurora service
 2. Build tools and procedures for such drills, so that we can repeat drills against other services on different platform.
 
-Note
---------
+### Note
+
 1. All drills should happen in the context of our performance testing load, i.e., new traffic coming.
 2. Upon injected failure, aurora will just restart on the spot instead of failover, this means the service will wait until the master recovers
 3. Between AZs, the replica lag is around 20ms. However, this just means the lags in cache, because aurora uses a share-disk design, the data is always consistent.
 4. Failover times are typically 60-120 seconds.This means most connections will timeout during failover
 5. Aurora also has the capabity to perform disk failure and disk congestions, but drilling on such things brings debatable additonal value, until we gain more experience on that
 
-Crash dispatcher on writer
----------
+### Crash dispatcher on writer
+
 1. master: create db instance
 2. read replica: Read replica has been disconnected from master. Restarting Mysql => create db instance
 
-Crash instance on writer
---------
+### Crash instance on writer
+
 1. master: DB instance restarted
 2. read replica: DB instance restarted
 
-Crash node on writer
---------
+### Crash node on writer
+
 1. master: DB instance restarted
 2. read replica: Read replica has fallen behind the master too much. Restarting Mysql => DB instance restarted
 
 Failover
 --------
 1. old master:
+
 ```
 a. Started cross AZ failover to DB instance
 b. A new writer was promoted. Restarting database as a reader.
@@ -45,6 +46,7 @@ d. Completed failover to DB instance
 ```
 
 2. new master:
+
 ```
 a. Started cross AZ failover to DB instance
 b. DB instance shutdown

@@ -88,3 +88,18 @@ Design:
 * post_id -> liked_cnt table is debatable. Most likely we need it. We can also use a hyperloglog data structure, which has 2% error with 1.5KB of memory with cnt > 1e9
 * similarly, we can use a post_id -> liked user_id bloomfilter table to speed up scatter-gather. Less than 10 bits for 1% false positive rate 
 * Pre-compute the liked count or not is very similar to the post feed discussion. Each page we see no more than 10 new posts, so compute in memory is good enough
+
+### Requirement: post can be nested replied, and replies sorted by number of likes
+
+That is, show the most popular replies under the post. 
+
+This means we need to store a tree like structure in DB
+
+* Each reply needs to keep track of
+  * root post
+  * parent reply 
+  * number of likes
+  * who liked them
+  * Position among the sibling
+  * How many children it has
+* Need a separate OLAP pipeline to generate this top liked reply tree

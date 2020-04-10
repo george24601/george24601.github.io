@@ -77,6 +77,7 @@ How about generating persisted feed on demand?
 * This is possible. Consider 100 mil MAU, each person reads 200 feeds per day, this means we need to store 20B records per month, each record takes 128 bytes would mean 3PB, note entirely unreasonable
 * Again, this means we need to keep track of deltas of the user's recently added/removed poster, so we can update the feed
 
+
 ### Requirement: User can like a post and undo it
 
 We need to display
@@ -103,3 +104,15 @@ This means we need to store a tree like structure in DB
   * Position among the sibling
   * How many children it has
 * Need a separate OLAP pipeline to generate this top liked reply tree
+
+### Requirment: User searches keywords
+* Upon the post, sends tweet to the indexer
+* A seperate search service to handle the request
+
+
+### Discussion on the [The popular solution](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/twitter/README.md)
+* It chose to store the home timeline of the follower in the cache via a fanout service, to optimize for the read performance 
+  * By a redis list
+* It adds the tweet to the search index service
+* Avoid fanning out for highly followed users
+* Abstract follower/following relationship into a user graph service

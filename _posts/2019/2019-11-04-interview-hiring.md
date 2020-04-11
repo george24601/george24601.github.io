@@ -22,6 +22,7 @@ tags: [interview, pm]
 * Team should feel the alignment of the tech perspective with the candidate
 * Candidate can be a leader or follower regardless of current status and self-esteem
 * Don't sell the position by cool tech. Instead, look for people who wants to own, interested in the business, and customer
-* It is a team, not family. So hire for the best and cut the under-performer
-  * Easier to hire 90th percentile than training avg person to 90th percentile 
+* Easier to hire 90th percentile than training avg person to 90th percentile 
   * "Instead of 150 new people, are you sure you don’t want 75 people whom you pay twice as much because they have twice as much experience and can be higher performers?"
+* Use closed tech quesitons to filter out obvious nos
+  * ask why certain tech is needed, and then dive deep into details to see the max depth

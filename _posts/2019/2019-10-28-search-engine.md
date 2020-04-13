@@ -23,6 +23,8 @@ tags: [interview]
 * Indexer reads/receives URL from the crawler, and build inverted index by visiting the URL
 * Child links from that page is needed for page rank 
 * Choose to snapshot the page visited, including the link and snippets. This will power the document service when the search indexer returns the URLs
+  * may build the document a forward index of key words and prefixes
+  * for quick filtering, can use a bloomfilter for the key words and prefixes
 
 ### Search indexer
 * Analyze the search keyword

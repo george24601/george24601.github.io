@@ -36,7 +36,11 @@ Backend engineers developing Java microservices
 * Do NOT make any remote/inter-process calls when you are inside a mutex. 95% of chance such code is wrong
 * The network latency between nodes in our DC is about 1-2 ms. Do not issue sequential network call, as the latency will add up quickly
 * Low timeout so we can fail early, which also protects the downstream system. Timeout should be no more than 2s on UX-impacting calls (may even consider 1s)
+ * Retry no more than 3 times with random jitters to avoid thundering herd problem
+ * Because of retry, the timeout of each call needs to be 1/2 or 1/3 of the read timeout of the client. Otherwise, it will have no impact because client times out already
+ * Timeout normally just kills the current request connection. Often client side needs to do additonal things to trigger clean up of long running action. The key point is that don't expect server time to do clean up without explicit instruction from client side
 
+ 
 ### Operation
 * Health check
   * The thread answering health check is often different from the worker thread. To prevent the ninja work done by the worker thread, upon detecting health check failure, make sure you shut down the whole process

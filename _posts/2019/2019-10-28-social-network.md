@@ -8,22 +8,21 @@ tags: [interview]
 
 ### Data structure: relationship graph
 
-As # of n-n relationship grows, relational and then graph model becomes more appropriate
-
-Note that for Vs and Es, they don't need to be of homogenous type at all
-
+* As # of n-n relationship grows, relational and then graph model becomes more appropriate. 
+* Note that for Vs and Es, they don't need to be of homogenous type at all, e.g., user can like a picture
 * vertices:
  1. uid
- 2. k-v pairs for properties
+ 2. metadata
  3. set of incoming edges
  4. set of out going edges
+ 5. what type of vertex is it 
 * edges
  1. uid
- 2. k-v pairs for properties
+ 2. metadata
  3. marks what kind of relationship this edge represets
  4. both ends of the edge
 
-This naturally means we can store Vs and Es into different tables/DBs
+This separation of model means we can store Vs and Es into different tables/DBs
 
 ### Requirement: Daily system notification
 

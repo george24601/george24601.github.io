@@ -55,16 +55,48 @@ This includes:
 
 #### Case 1: user didn't see the payment on 
 
-#### Case 4: periodically latency spike
+* Unable to reproduce in other environments. Direct affecting 200 txns per sec
+* Add metrics at every single level, and release it to narrow down the code
+  * Read source code and draw graph to understand the flow
+* Find the explaination and mitigation, released the degraded but correct exp in 3 hours
+  * Complete fix took two weeks to release, because will not experience such traffic soon, and people are tired after the big campaign
 
 
-#### Case 2: Run out of auto incremental id
+#### Case 2: periodically latency spike
+
+* A critical service's API latency spikes every day, and k8s health check failed
+* Check db query to find longest total time queries
+  * Find that it is from a db co-hosted on the same server  
+* Provide mitigation by turning off the cron job
+  * Complete fix provided in two weeks with proper db seperation and index
+
+#### Case 3: Run out of auto incremental id
+
+* 36 hours before switching online, unable to execute txn
+* Ask support for mitigation and test case. Tested independently both us and 3rd party
+ * Contact sign off people to explain my proposal and the risk of doing so. Got approval to go ahead as planned
+* Goes as planned without incident
+  * Hot fix released in 3 month. Upgraded in 5 month
 
 
 ### Describe your process for handling disagreement with 360
 
-#### Case 1: db selection - round 1
+#### Case 1 & 2: db selection - round 1 & 2
 
-#### Case 2: db selection - round 2
+* Run into performance problem with existing db
+* Document all pros and cons for discussion with stakeholders
+  * Got overruled. Stayed my objection and propose a PoC
+  * Decision made without consulting me
+  * Provide migration plan to commit the success
+* Run into performance problem again after 6 months. Unable to handle it even upgrade to the highest spec
+  * List different options with new context
+  * PoCed wtih all options
+  * Stakeholder picked the option and went ahead
+* Stable, incident-free deployment
+ 
 
 #### Case 3: the performance impact of count(*)
+
+* 500 error due to failed health checks during load testing
+* Explained why current solution won't work. Offered sample solution. The other team's owner doesn't commit to fix it.
+* Raised to my chain of command, forwarded solution, and told not to worry about it after that

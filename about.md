@@ -8,5 +8,4 @@ permalink: /about/
 * [Resume](https://github.com/george24601/interview/blob/master/resume_george.pdf) 
 * [AtCoder](https://atcoder.jp/users/george24601)
 * [Codeforces](https://codeforces.com/profile/george24601)
-* [Hackerrank]()
 * [Leetcode](https://leetcode.com/george24601/)

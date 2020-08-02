@@ -3,7 +3,7 @@ layout: post
 title: "Design Discussion: Low Latency Event Sourcing in Microservice" 
 description: ""
 category: 
-tags: [microservice]
+tags: [microservice, arch]
 ---
 
 ### Scenario

@@ -7,10 +7,13 @@ tags: [interview, arch]
 ---
 
 ### 2PC
+
 * 2PC assumes that data in stable storage is never lost. No node cashes forever
 * Classic 2PC blocks when a machine fails - it locks the object down for further changes, until at the commit
+* One we pass the prepare stage, we know the exeuction result will be all commited, or all canceled (when prepare is successful, but some participants failed to commit)
 
 ### TCC
+
 * Try: reserve resources
 * Confirm: execute without checking, idempotent. Note that txns other than the one from main service can be executed asyncly
 * Cancel: cancel the execution, release resources done by the try. Idempotent. Note that txns other than the one from main service can be executed asyncly
@@ -23,8 +26,7 @@ tags: [interview, arch]
 * The Customer Service receives the event attempts to reserve credit for that Order. It publishes either a Credit Reserved event or a CreditLimitExceeded event to Order Service
 * The Order Service receives the event and changes the state of the order to either approved or cancelled
 
-
-### centralized coordinator saga
+### Centralized coordinator saga
 
 1. The Order Service creates an Order in a pending state and creates a CreateOrderSaga
 2. The CreateOrderSaga sends a ReserveCredit command to the Customer Service
@@ -61,10 +63,12 @@ Scenario:
   * mark the OOO try as rollback only - can not execute
   * txn should have a globally unique id
 * In traditional DB, read committed isolation level can prevent it
-* In distributed, we can again use a semantics lock, although need to also introduce timeout +  random slacked retry to prevent possible deadlock
+* In distributed, we can again use a semantics lock, although need to also introduce timeout + random slacked retry to prevent possible deadlock
 * Domain logic should get money first before giving money to reduce the loss if compenstation failed due to concurrency
 
 ### TCC vs saga
+
 1. try vs direct
 2. in sequence vs parallel
 3. compenstation order
+4. For user POV, TCC offers better consistency, because try stage will reduce the likelihood of user seeing partial results. However, partial results cases can always constructed due to the nature of eventual consistency

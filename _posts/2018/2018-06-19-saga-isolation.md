@@ -10,7 +10,7 @@ tags: [interview, arch]
 
 * 2PC assumes that data in stable storage is never lost. No node cashes forever
 * Classic 2PC blocks when a machine fails - it locks the object down for further changes, until at the commit
-* One we pass the prepare stage, we know the exeuction result will be all commited, or all canceled (when prepare is successful, but some participants failed to commit)
+* One we pass the prepare stage, we know the exeuction result will be all commited
 
 ### TCC
 

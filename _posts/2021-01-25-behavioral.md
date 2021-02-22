@@ -26,13 +26,12 @@ tags: [interview, pm]
 ### Tell me about a mistake you've made. 
 * How did you handle it?
 
-### Tell me a time where you disagreed with your manager and you were wrong
+### Tell me a time where you disagreed with your manager
 * Disagree and commit. the bulk of your answer should be talking about how you delivered successfully in spite of not being on board with the initial decision
-* Do not use stories of winning a battle against your manager
-
-### Tell me a time where you disagreed with your manager and you were right
+* Decision was made after conflict, doesn't matter which side won
 * Be clear about what you don’t agree with and offer alternatives
-* The issue should be resolved
+* When I disagree and was wrong, it is because of unknown unkowns. Known unkowns would mean i didn't do due diligence 
+* Would be nice to define "right/wrong" but probably too much detail to cover in 1 min
 
 ### Describe a time when you struggled to build a relationship with someone important. 
 * How did you eventually overcome that?

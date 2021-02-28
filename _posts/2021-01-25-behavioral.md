@@ -43,3 +43,9 @@ tags: [interview, pm]
 
 ### Describe a time when you saw some problem and took the initiative to correct it rather than waiting for someone else to do it.
 
+### Tell me a time you had received a negative feedback
+* Explain a situation where you improved your performance after receiving constructive criticism.
+* Talk about how you listened and made changes when a boss or client critiqued your work.
+* It can also be insightful to describe a time when your work was unfairly criticized, and how you were able to rebuff the criticism without making anyone look bad.
+* Do not make the mistake of going into excessive detail about any work slip-ups—instead, focus on your positive reaction to criticism.
+

@@ -1,27 +1,20 @@
 ---
 layout: post
-title: "Guide lines on monitors and alerting - summary from Datadog docs"  
+title: "Guidelines on monitors and alerting"  
 description: ""
 category: 
-tags: [k8s]
+tags: [ops, datadog]
 ---
 
-# Source
-[Monitoring 101](https://www.datadoghq.com/blog/monitoring-101-collecting-data/)
+* Feel free to add alerts, but only page when the symptom impacts user or the user-facing impact is very likely to ensue.
+* For alerts requires intervetion but not right away, email and slack is enough.
+* We highly recommend you select "Do Not Require" for sparse metrics, otherwise some evaluations will be skipped - but this may trigger more false alarms if the window is too short
+* One idea is to create a composite monitor, one for the errorneous data, and one for the amount of data, and the alert fires only when both are satisfied
+* Datadog generally recommends against using interpolation for count/rate metrics in monitors, i.e., interpolation works only with gauge metrics
+* Short evaluation window means even shorter time buckets. In monitors with division over short evaluation windows. If metrics for the numerator and denominator aren’t both available at query time, you could get unwanted evaluation values.
 
-[Alerting 101](https://www.datadoghq.com/blog/alerting-101-status-checks/)
 
-#Monitoring
-
-1. Monitor your work metrics, including rps, 90th percentile latency, success rate in the last window, rate of error (per window or relative to throughput), 
-
-2. Monitor your resource metrics, including resource utilization, resource saturation, errors internal to resources, and resource availability
-
-3. Monitor change events, including releases, and scaling up and down.
-
-#Alerting
-
-1. Feel free to add alerts, but only page when the symptom impacts user or the user-facing impact is very likely to ensue.
-
-2. For alerts requires intervetion but not right away, email and slack is enough.
-
+### References
+* [What is the "Do (not) require a full window of data for evaluation" monitor parameter?](https://docs.datadoghq.com/monitors/faq/what-is-the-do-not-require-a-full-window-of-data-for-evaluation-monitor-parameter/)
+* [Monitor Arithmetic and Sparse Metrics](https://docs.datadoghq.com/monitors/guide/monitor-arithmetic-and-sparse-metrics/)
+* 

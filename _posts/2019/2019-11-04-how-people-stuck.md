@@ -10,7 +10,7 @@ tags: [interview, pm]
 
 * Need to attend to details. Communicate timely what is accomplished, setback, challenges, decisions make
   * Push it before being asked, and provide details if necessary
-* Professional verbal, written, and body communication in front of the senior management. Can you present to the peers of seniro management alone?
+* Professional verbal, written, and body communication in front of the senior management. Can you present to the peers of senior management alone?
 * When you are asked to do something by your manager. Either do it or say you don't want to do it. Just don't fail to do it
 
 

@@ -6,20 +6,14 @@ category:
 tags: [pm]
 --- 
 
-### Overcome fear and embarrassment
-
-* It is just a game. Being stared at is part of it.
-* Avoid reluctant yes or unhelpful no. Looking for a third option, e.g., quote a higher price, different time
-* As long as parties don't walk out. Negotiation wouldn't cost the deal.
-* Crumbling is always an opinion, just a game that may not work out sometimes 
-* Just a game to them. Doesn't affect how they will like you. Does not make you like them more, if they slash the price. 
-
 ### Time to negotiate
 
 * They are keen to sell it, and making you an easy offer, e.g., offer at the first turn
-* You have a complaint. Turn that into negotiation, since you are in a strong position. 
-     * Dirty hotel room -> move to a better room
-     * dead mouse -> rejected a year worth of bread. What can we do to make you happy? Asked for something else.
+* You have a complaint. Turn that into negotiation, since you are in a strong position.  
+  * Dirty hotel room -> move to a better room 
+  * dead mouse -> rejected a year worth of bread. What can we do to make you happy? Asked for something else.
+* As long as parties don't walk out. Negotiation wouldn't cost the deal.
+  * Just a game to them. Doesn't affect how they will like you. Does not make you like them more, if they slash the price. 
 
 ### Planning - most important part of negotiation  
 
@@ -73,12 +67,15 @@ tags: [pm]
 * Framing the issue to resolve as a discussion
   * I am concerned on X, let's discuss - interest
   * I want to resolve X. - issue - then why is it important to you? - interest
+* Avoid reluctant yes or unhelpful no. Looking for a third option, e.g., quote a higher price, different time
+* Crumbling is always an opinion, just a game that may not work out sometimes 
 
 ### Closing
 
 * "Final offer" avoid to use it.
   * Gives up too much information
   * Neither side can move
+  * If you present your offer in a take it or leave it fashion, you may be met with a reluctance to deal with your hostility. You can make the same outrageous requests, but if instead you allow your opponent to reject your proposition, you influence the decision toward agreement because they see that they can win with you. You will still get what you want and get the opponent to do what you want, depending on how you frame your offer.
 * Don't split the difference. It is the the last feeble attempt before giving up.
   * Counter
     * I really can't, it gotta be 

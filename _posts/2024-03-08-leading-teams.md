@@ -14,7 +14,8 @@ From [How to Lead a Team](https://abseil.io/resources/swe-book/html/ch05.html)
 
 ####  Influence without authority
 
-* Identifying a strategic need for the company, showing how it linked to the mission and existing priorities of the company, and automate your process
+* Identify a strategic need for the company and show how it is linked to existing priorities. 
+* Automate your process to reduce friction
 * Working to build team consensus
 * If your team is moving quickly, sometimes it will voluntarily concede authority and direction to team leads. Even though this might look like a dictatorship or oligarchy, when it’s done voluntarily, it’s a form of consensus.
 

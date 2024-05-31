@@ -17,12 +17,14 @@ relations produces a relation. This is why we call this an algebra
 * Composition of relational algebra operations: Allows expressions to be nested, just as in arithmetic. This property is called closure.
 * Relational model is set-based (no duplicate tuples)
 * RA is not universal. It is impossible in relational algebra (or standard SQL) to compute the relation Answer(Ancestor, Descendant), e.g., traverse through a graph
+* Many relational databases use relational algebra operations for representing execution plans. Relatively easy to manipulate for query optimization
 
 
 ### Operations
 
-#### basic operations
+#### Basic Operations
 
+* Each operation takes one or two relations as input. Produces another relation as output
 * Selection: a subset of rows. Sigma(predicate, R). Unary
 * Projection: a subset of columns. Pi(col1, ... colN, R). Unary
    * Result of PROJECT operation is a set of distinct tuples, i.e., maps to a DISTINCT in SQL
@@ -58,16 +60,47 @@ relations produces a relation. This is why we call this an algebra
   * grouping attributes are attributes of R
   * function list is a list of (function, attribute) pairs
 * If no renaming occurs, the attributes of the resulting relation are named by concatenating the name of the function and the attribute.
+* Can append -distinct to any aggregate function to specify elimination of duplicates, e.g., count-distinct
+
+
+
+#### Relation variables
+
+* Refer to a specific relation: A specific set of tuples, with a particular schema
+* A named relation is technically a relation variable
+
+
+#### Assignment
+
+* relvar <- E. E is an expression that evaluates to a relation
+* assign a relation-value to a relation-variable
+* the name relvar persists in the database
+* Query evaluation becomes a sequence of steps, e.g., % operator
+
+
+
+#### Rename
+
+* Results of relational operations are unnamed. Result has a schema, but the relation itself is unnamed
+* Used to resolve ambiguities within a specific relational algebra expression
+  * Allow a derived relation and its attributes to be referred to by enclosing relational-algebra operations
+  * Allow a base relation to be used multiple ways in one query, e.g., self-join
+* rho(x, E): x - new name, E - named relation, relation-variable, or an expression that produces a relation
+* does not create a new relation-variable
+* The new name is only visible to enclosing relational-algebra expression
+
+
 
 ### Query tree
 
-* Leaf nodes are base relations
-* Internal nodes are relational algebra operations
+* Leaf nodes are base relations/operands --- either variables standing for relations or particular, constant relations
+* Internal nodes are operators
 
 ### Relational algebra vs SQL
 
-* SQL data model is a multiset not a set, i.e. duplicates allowed.
-* 
+* SQL data model is a bag/multiset not a set, i.e. duplicates allowed.
+* Some operations, like projection, are more efficient on bags than sets.
+* SQL is much more on the “declarative” end of the spectrum (What you want). RA is procedural (how to do it)
 
 #### Null
 
@@ -75,7 +108,7 @@ relations produces a relation. This is why we call this an algebra
 * The result of any arithmetic expression involving null is null.
 * Aggregate functions simply ignore null values (as in SQL)
 * For duplicate elimination and grouping, null is treated like any other value, and two nulls are assumed to be the same (as in SQL)
-* (unknown or true) = true, (unknown or false) = unknown (unknown or unknown) = unknown
+* (unknown or true) = true, (unknown or false) = unknown, (unknown or unknown) = unknown
 
 
 
@@ -86,4 +119,5 @@ relations produces a relation. This is why we call this an algebra
 * [Relational Algebra](https://web.wlu.ca/science/physcomp/ikotsireas/CP465/W1-Intro-Review/RelationalAlgebra.pdf)
 * [Relational algebra](https://www.cbcb.umd.edu/confcour/Spring2014/CMSC424/Relational_algebra.pdf)
 * [Relational Algebra, Relational Calculus, and SQL](https://cs.nyu.edu/~jcf/classes/CSCI-GA.2433-001_sp15/slides/session5/RelationalAlgebra-RelationalCalculus-SQL.pdf)
+* [Relational Algebra](http://users.cms.caltech.edu/~donnie/cs121/CS121Lec02.pdf)
 
